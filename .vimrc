@@ -11,6 +11,7 @@ set nowrap
 set hlsearch
 set guifont=Monospace\ 8
 set wildmenu
+ino jj <Esc> 
 
 " Latex related configuration
 " set runtimepath+=/usr/share/vim/addons/
@@ -26,5 +27,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'jansenm/vim-cmake'
 Bundle 'Shougo/neocomplcache'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
+Bundle 'vim-jp/cpp-vim'
+Bundle 'armyofevilrobots/vim-openscad'
 
 filetype plugin on
+
+" Vim-session
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
