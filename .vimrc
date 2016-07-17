@@ -26,7 +26,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'jansenm/vim-cmake'
-Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplete.vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'vim-jp/cpp-vim'
@@ -51,6 +51,12 @@ endif
 " Vim-session
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
+
+" Neocomplete
+let g:neocomplete#enable_at_startup=1
+let g:neocomplete#auto_completion_start_length=2
+let g:neocomplete#manual_completion_start_length=1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Airline
 let g:airline_section_warning=''
