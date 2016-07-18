@@ -9,7 +9,7 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Monospace\ Bold\ 8
+set guifont=Monospace\ Bold\ 9
 set wildmenu
 ino jj <Esc> 
 
@@ -37,9 +37,11 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'gregsexton/gitv'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'majutsushi/tagbar'
 
 filetype plugin on
 
+"-------------"
 " Theme
 if has('gui_running')
     set background=dark
@@ -48,10 +50,12 @@ else
     colorscheme desert
 endif
 
+"-------------"
 " Vim-session
-let g:session_autosave = 'yes'
-let g:session_autoload = 'yes'
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
+"-------------"
 " Airline
 let g:airline_section_warning=''
 if has('gui_running')
@@ -60,9 +64,13 @@ else
     let g:airline_theme='dark'
 endif
 
+"-------------"
 " Gitv
 let g:Gitv_OpenHorizontal=1
 
+"-------------"
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 "-------------"
 " Neocomplete
