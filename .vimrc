@@ -1,4 +1,5 @@
 syntax on
+set nocompatible
 set laststatus=2
 set linebreak
 set number
@@ -9,7 +10,7 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Monospace\ Bold\ 9
+set guifont=Monospace\ Bold\ 8
 set wildmenu
 ino jj <Esc> 
 
@@ -54,10 +55,12 @@ endif
 " Vim-session
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
+set sessionoptions-=buffers
 
 "-------------"
 " Airline
 let g:airline_section_warning=''
+let g:airline#extensions#tagbar#enabled = 0
 if has('gui_running')
     let g:airline_theme='solarized'
 else
@@ -71,6 +74,7 @@ let g:Gitv_OpenHorizontal=1
 "-------------"
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_autoclose=0
 
 "-------------"
 " Neocomplete
