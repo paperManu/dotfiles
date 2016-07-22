@@ -12,6 +12,8 @@ set nowrap
 set hlsearch
 set guifont=Monospace\ Bold\ 8
 set wildmenu
+set undofile
+set undodir=/home/manu/.vimundo/
 ino jj <Esc> 
 
 " Latex related configuration
@@ -39,17 +41,14 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'gregsexton/gitv'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/a.vim'
 
 filetype plugin on
 
 "-------------"
 " Theme
-if has('gui_running')
-    set background=dark
-    colorscheme solarized
-else
-    colorscheme desert
-endif
+set background=dark
+colorscheme solarized
 
 "-------------"
 " Vim-session
@@ -74,7 +73,11 @@ let g:Gitv_OpenHorizontal=1
 "-------------"
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_autoclose=0
+let g:tagbar_autoclose=1
+
+"-------------"
+" a.vim
+let g:alternateSearchPath = 'reg:#\<src\>$#include#,reg:#\<include\>$#src#'
 
 "-------------"
 " Neocomplete
