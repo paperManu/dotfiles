@@ -11,6 +11,7 @@ set autoindent
 set nowrap
 set hlsearch
 set guifont=Monospace\ Bold\ 8
+set guioptions-=m
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
