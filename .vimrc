@@ -43,6 +43,7 @@ Bundle 'gregsexton/gitv'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/a.vim'
+Bundle 'rhysd/vim-clang-format'
 
 filetype plugin on
 
@@ -79,6 +80,24 @@ let g:tagbar_autoclose=1
 "-------------"
 " a.vim
 let g:alternateSearchPath = 'reg:#\<src\>$#include#,reg:#\<include\>$#src#'
+
+"-------------"
+" vim-clang-format
+let g:clang_format#style_options = {
+    \ "BasedOnStyle" : "LLVM",
+    \ "AlignTrailingComments" : "true",
+    \ "AlwaysBreakTemplateDeclarations" : "true",
+    \ "AlignAfterOpenBracket" : "DontAlign",
+    \ "AllowShortFunctionsOnASingleLine" : "Inline",
+    \ "BinPackArguments" : "false",
+    \ "BinPackParameters" : "false",
+    \ "BreakBeforeBraces" : "Allman",
+    \ "ColumnLimit" : 180,
+    \ "IndentWidth" : 4,
+    \ "PointerAlignment" : "Left",
+    \ "Standard" : "Cpp11",
+    \ "TabWidth" : 4}
+autocmd FileType c,cpp ClangFormatAutoEnable
 
 "-------------"
 " Neocomplete
