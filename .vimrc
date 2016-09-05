@@ -44,6 +44,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/a.vim'
 Bundle 'rhysd/vim-clang-format'
+Bundle 'fidian/hexmode'
 
 filetype plugin on
 
