@@ -15,6 +15,7 @@ set guioptions-=m
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
+set so=5
 ino jj <Esc> 
 
 " Latex related configuration
