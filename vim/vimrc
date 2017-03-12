@@ -10,7 +10,7 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Monospace\ Bold\ 8
+set guifont=Monospace\ Bold\ 9
 set guioptions-=m
 set wildmenu
 set undofile

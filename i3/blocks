@@ -29,10 +29,6 @@ command=${HOME}/.config/i3/i3-blocks/blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[weather]
-instance=6077243
-interval=300
-
 [playerctl]
 label=
 instance=spotify
@@ -47,6 +43,10 @@ instance=Master
 interval=once
 min_width=♪ 100%
 signal=10
+
+[weather]
+instance=6077243
+interval=300
 
 [bandwidth]
 instance=wlp2s0;in

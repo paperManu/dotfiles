@@ -2,6 +2,11 @@
 
 source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 
+# 
+# General stuff
+#
+git submodule update --init
+
 #
 # i3
 #
