@@ -47,6 +47,19 @@ instance=6077243
 interval=300
 
 [bandwidth]
+instance=enp7s0;in
+label=
+interval=1
+min_width= 1024Mb
+color=#dddddd
+
+[bandwidth]
+instance=enp7s0;out
+label=
+interval=1
+min_width= 1024Mb
+
+[bandwidth]
 instance=wlp2s0;in
 label=
 interval=1
@@ -58,6 +71,13 @@ instance=wlp2s0;out
 label=
 interval=1
 min_width= 1024Mb
+
+[network]
+label=
+instance=enp7s0
+interval=10
+min_width= on
+color=#dddddd
 
 [network]
 label=
