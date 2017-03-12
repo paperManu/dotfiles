@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export TIMEWARRIORDB=~/Dropbox/tasks/timewarrior
+TIMEW_OUTPUT=$(timew | egrep "Tracking ")
+
+if [[ "${TIMEW_OUTPUT}" == "" ]]; then
+    exit
+fi
+
+TASK=$(echo "${TIMEW_OUTPUT}" | sed 's/Tracking //')
+if [[ "${TASK}" == "" ]]; then
+    TASK="something"
+fi
+
+echo "Doing: ${TASK}"

@@ -29,12 +29,9 @@ command=${HOME}/.config/i3/i3-blocks/blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[playerctl]
-label=
-instance=spotify
+[timewarrior]
+label=#
 interval=5
-signal=10
-color=#dddddd
 
 [volume]
 label=♪
@@ -43,6 +40,7 @@ instance=Master
 interval=once
 min_width=♪ 100%
 signal=10
+color=#dddddd
 
 [weather]
 instance=6077243
