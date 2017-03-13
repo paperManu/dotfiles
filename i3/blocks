@@ -30,7 +30,7 @@ separator_block_width=15
 markup=none
 
 [timewarrior]
-label=#
+label=⚙
 interval=5
 
 [volume]

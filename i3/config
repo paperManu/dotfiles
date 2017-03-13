@@ -135,10 +135,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -168,9 +168,17 @@ bar {
     focused_workspace #586e75 #586e75 #ffffff
     active_workspace #073642 #073642 #ffffff
     inactive_workspace #002b36 #002b36 #aea79f
-    urgent_workspace #77216f #77216f #ffffff
+    urgent_workspace #0083A4 #0083A4 #ffffff
   }
 }
+
+#
+# Color scheme
+# class                 border  backgr. text    indicator child_border
+client.focused          #0083A4 #0083A4 #fdf6e3 #0083A4
+client.focused_inactive #073642 #073642 #93a1a1 #002b36
+client.unfocused        #002b36 #002b36 #586e75 #002b36
+client.urgent           #FF5E00 #FF5E00 #fdf6e3 #FF5E00
 
 set $wallpaper ~/.config/i3/wallpaper.jpg
 
@@ -195,14 +203,6 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Pause mode "$mode_system"
-
-#
-# Color scheme
-# class                 border  backgr. text    indicator child_border
-client.focused #586e75 #586e75 #fdf6e3 #268bd2
-client.focused_inactive #073642 #073642 #93a1a1 #002b36
-client.unfocused #002b36 #002b36 #586e75 #002b36
-client.urgent #dc322f #dc322f #fdf6e3 #dc322f
 
 # Volume & Media Keys
 set $pulse_audio_sink 1
