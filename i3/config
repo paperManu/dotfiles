@@ -92,11 +92,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 1 Code
-set $workspace2 2 Net
-set $Workspace3 3 Chat
-set $Workspace4 4 Music
-set $Workspace5 5 Misc
+set $workspace1 1:Code
+set $workspace2 2:Net
+set $Workspace3 3:Chat
+set $Workspace4 4:Music
+set $Workspace5 5:Misc
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -157,10 +157,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   font pango:monospace bold 10
+  strip_workspace_numbers yes
   status_command i3blocks -c ~/.config/i3/blocks
         position top
-        tray_output primary
-        tray_padding 0
 
   colors {
     separator #586e75
@@ -236,6 +235,8 @@ exec_always feh --bg-scale $wallpaper
 exec --no-startup-id "pulseaudio --start"
 # Auto mount USB
 exec --no-startup-id "devmon --no-gui"
+# Network manager
+exec --no-startup-id nm-applet
 # Dropbox
 exec --no-startup-id "dropbox start"
 # Compton
