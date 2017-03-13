@@ -32,6 +32,7 @@ markup=none
 [timewarrior]
 label=⚙
 interval=5
+color=#dddddd
 
 [volume]
 label=♪
@@ -40,83 +41,87 @@ instance=Master
 interval=once
 min_width=♪ 100%
 signal=10
-color=#dddddd
 
 [weather]
 instance=6077243
 interval=300
+color=#dddddd
 
 [bandwidth]
 instance=enp7s0;in
 label=
 interval=1
 min_width= 1024Mb
-color=#dddddd
 
 [bandwidth]
 instance=enp7s0;out
 label=
 interval=1
 min_width= 1024Mb
+color=#dddddd
 
 [bandwidth]
 instance=wlp2s0;in
 label=
 interval=1
 min_width= 1024Mb
-color=#dddddd
 
 [bandwidth]
 instance=wlp2s0;out
 label=
 interval=1
 min_width= 1024Mb
+color=#dddddd
 
 [network]
 label=
 instance=enp7s0
 interval=10
 min_width= on
-color=#dddddd
 
 [network]
 label=
 instance=wlp2s0
 interval=10
 min_width= 100%
-color=#dddddd
 
 [memory]
 label=
 instance=mem;free
 interval=30
+color=#dddddd
 
 [memory]
 label=
 instance=swap;total
 interval=30
-color=#dddddd
 
 [ip-address]
 label=
 interval=60
+color=#dddddd
 
 [brightness]
 label=
 interval=5
 min_width= 100%
 signal=5
-color=#dddddd
 
 [cpu]
 label=
 interval=2
 min_width= 100%
+color=#dddddd
 
 [battery]
 label=
 interval=30
 min_width= 100%
+
+[temperature]
+instance=Core
+label=
+interval=5
 color=#dddddd
 
 [keymap]
