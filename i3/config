@@ -127,6 +127,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+workspace "1:Code" output DVI-I-1
+workspace "2:Net" output DP-1
+workspace "3:Chat" output DP-1
+workspace "4:Music" output DP-1
+workspace "5:Misc" output DP-1
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -224,8 +230,8 @@ bindsym $mod+Tab exec --no-startup-id ${HOME}/.config/i3/xkblayout-state set +1 
 # Startup applications
 #
 # Keyboard layout and behavior
-exec setxkbmap -layout us,fr
-exec setxkbmap -option ctrl:nocaps
+exec_always setxkbmap -layout us,fr
+exec_always setxkbmap -option ctrl:nocaps
 exec xset r rate 250 30
 # Change resolution
 exec xrandr --output eDP1 --mode 2048x1152
@@ -236,7 +242,7 @@ exec --no-startup-id "pulseaudio --start"
 # Auto mount USB
 exec --no-startup-id "devmon --no-gui"
 # Network manager
-exec --no-startup-id nm-applet
+exec --no-startup-id "nm-applet"
 # Dropbox
 exec --no-startup-id "dropbox start"
 # Compton
