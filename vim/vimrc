@@ -6,12 +6,13 @@ set number
 set expandtab
 set tabstop=4
 set guioptions-=T
+set guioptions-=m
+set guioptions-=r
 set autochdir
 set autoindent
 set nowrap
 set hlsearch
 set guifont=Monospace\ Bold\ 9
-set guioptions-=m
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
