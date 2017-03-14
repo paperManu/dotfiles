@@ -133,6 +133,10 @@ workspace "3:Chat" output DP-1
 workspace "4:Music" output DP-1
 workspace "5:Misc" output DP-1
 
+#
+# Some windows are floating by default
+for_window [class="Splash*"] floating enable
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
