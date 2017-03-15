@@ -127,8 +127,8 @@ color=#dddddd
 [keymap]
 label=
 command=${HOME}/.config/i3/xkblayout-state print %s
-interval=once
-signal=11
+interval=1
+signal=1
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'

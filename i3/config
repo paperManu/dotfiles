@@ -228,19 +228,22 @@ bindsym $mod+F6 exec --no-startup-id xbacklight -inc 10 && pkill -RTMIN+5 i3bloc
 bindsym $mod+F5 exec --no-startup-id xbacklight -dec 10 && pkill -RTMIN+5 i3blocks
 
 # Keyboard layout change
-bindsym $mod+Tab exec --no-startup-id ${HOME}/.config/i3/xkblayout-state set +1 && pkill -RTMIN+11 i3blocks
+# bindsym $mod+Tab exec --no-startup-id ${HOME}/.config/i3/xkblayout-state set +1 && pkill -RTMIN+11 i3blocks
+bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.next_layout && sleep 0.1 && pkill -RTMIN+1 i3blocks
 
 #
 # Startup applications
 #
 # Keyboard layout and behavior
-exec_always setxkbmap -layout us,fr
-exec_always setxkbmap -option ctrl:nocaps
-exec xset r rate 250 30
+exec --no-startup-id "setxkbmap -layout us,fr"
+exec setxkbmap -option ctrl:nocaps
+exec --no-startup-id "xset r rate 250 30"
 # Change resolution
-exec xrandr --output eDP1 --mode 2048x1152
+exec "xrandr --output eDP1 --mode 2048x1152"
+# For keyboard layout handling
+exec --no-startup-id "kbdd"
 # Wallpaper
-exec_always feh --bg-scale $wallpaper
+exec_always "feh --bg-scale $wallpaper"
 # Pulse Audio
 exec --no-startup-id "pulseaudio --start"
 # Auto mount USB
@@ -250,8 +253,8 @@ exec --no-startup-id "nm-applet"
 # Dropbox
 exec --no-startup-id "dropbox start"
 # Compton
-exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Disable Nautilus desktop
-exec gsettings set org.gnome.desktop.background show-desktop-icons false
+exec "gsettings set org.gnome.desktop.background show-desktop-icons false"
 # Disable touch screen
 exec_always xinput disable `xinput list | egrep "Atmel.*id=[0-9]*" | egrep -o "=[0-9]*" | egrep -o "[0-9]*"`
