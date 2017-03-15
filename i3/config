@@ -223,6 +223,13 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioPrev exec playerctl previous && pkill -RTMIN+10 i3blocks
 
+# For keyboard without media keys
+bindsym $mod+F12 exec --no-startup-id pactl set-sink-volume $pulse_audio_sink +5% && pkill -RTMIN+10 i3blocks
+bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume $pulse_audio_sink -5% && pkill -RTMIN+10 i3blocks
+bindsym $mod+F9 exec playerctl play-pause
+bindsym $mod+F10 exec playerctl next && pkill -RTMIN+10 i3blocks
+bindsym $mod+F8 exec playerctl previous && pkill -RTMIN+10 i3blocks
+
 # Screen brighness
 bindsym $mod+F6 exec --no-startup-id xbacklight -inc 10 && pkill -RTMIN+5 i3blocks
 bindsym $mod+F5 exec --no-startup-id xbacklight -dec 10 && pkill -RTMIN+5 i3blocks
@@ -235,8 +242,7 @@ bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru
 # Startup applications
 #
 # Keyboard layout and behavior
-exec --no-startup-id "setxkbmap -layout us,fr"
-exec setxkbmap -option ctrl:nocaps
+exec --no-startup-id "setxkbmap -layout us,fr -option ctrl:nocaps"
 exec --no-startup-id "xset r rate 250 30"
 # Change resolution
 exec "xrandr --output eDP1 --mode 2048x1152"
@@ -258,3 +264,5 @@ exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 exec "gsettings set org.gnome.desktop.background show-desktop-icons false"
 # Disable touch screen
 exec_always xinput disable `xinput list | egrep "Atmel.*id=[0-9]*" | egrep -o "=[0-9]*" | egrep -o "[0-9]*"`
+# Autolock
+exec xautolock -time 5 -locker 'i3lock -c 000000' &
