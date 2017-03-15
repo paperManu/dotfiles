@@ -8,6 +8,15 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 git submodule update --init
 
 #
+# Bash
+#
+if [ ! -d ${HOME}/.bashrc ] ; then
+    ln -s ${source_directory}/bashrc ${HOME}/.bashrc
+else
+    echo "${HOME}/.bashrc : this file already exists"
+fi
+
+#
 # i3
 #
 if [ ! -d ${HOME}/.config/i3 ] ; then
