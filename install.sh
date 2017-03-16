@@ -16,6 +16,20 @@ else
     echo "${HOME}/.bashrc : this file already exists"
 fi
 
+if [ ! -d ${HOME}/.bash_profile ] ; then
+    ln -s ${source_directory}/bash_profile ${HOME}/.bash_profile
+else
+    echo "${HOME}/.bash_profile : this file already exists"
+fi
+
+#
+# ssh-agent
+#
+#sudo sed -i 's/#*\(.*Autostart.*\)/#\1/g' /etc/xdg/autostart/gnome-keyring-ssh.desktop
+#mkdir -p ${HOME}/.config/systemd/user
+#cp ssh-agent.service ${HOME}/.config/systemd/user/ssh-agent.service
+#systemctl --user enable ssh-agent.service
+
 #
 # i3
 #

@@ -154,7 +154,7 @@ alias rmake='make 2>&1 >/dev/null | tac | egrep --color "\b(error)\b|$"'
 export TIMEWARRIORDB=~/Dropbox/tasks/timewarrior
 
 # Unlock ssh-agent
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent -s`
-    ssh-add
-fi
+#if [ -z "$SSH_AUTH_SOCK" ] ; then
+#    eval `ssh-agent -s`
+#    ssh-add
+#fi
