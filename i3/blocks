@@ -31,6 +31,7 @@ markup=none
 
 [timewarrior]
 label=⚙
+command=${HOME}/.config/i3/other-blocks/timewarrior
 interval=5
 color=#dddddd
 
@@ -44,6 +45,7 @@ signal=10
 
 [weather]
 instance=6077243
+command=${HOME}/.config/i3/other-blocks/weather
 interval=300
 color=#dddddd
 
