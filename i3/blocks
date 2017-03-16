@@ -117,6 +117,7 @@ color=#dddddd
 
 [battery]
 label=
+command=${HOME}/.config/i3/other-blocks/battery
 interval=30
 min_width= 100%
 
