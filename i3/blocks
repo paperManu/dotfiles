@@ -37,7 +37,7 @@ color=#dddddd
 
 [volume]
 label=♪
-command=amixer -c 1 -M -D pulse get Master | grep -o -E [[:digit:]]+% | head -1
+command=${HOME}/.config/i3/other-blocks/volume
 instance=Master
 interval=once
 min_width=♪ 100%
@@ -129,7 +129,7 @@ color=#dddddd
 
 [keymap]
 label=
-command=${HOME}/.config/i3/xkblayout-state print %s
+command=${HOME}/.config/i3/other-blocks/keymap
 interval=1
 signal=1
 

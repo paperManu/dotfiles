@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export TIMEWARRIORDB=~/Dropbox/tasks/timewarrior
+
 TIMEW_OUTPUT=$(timew | egrep "Tracking ")
 
 TASK=$(echo "${TIMEW_OUTPUT}" | sed 's/Tracking //')
@@ -13,6 +14,16 @@ if [[ "${TIMEW_OUTPUT}" != "" ]]; then
     OUTPUT="Doing: ${TASK} -"
 fi
 
+# Stop/continue task
+if [[ "${BLOCK_BUTTON}" != "" ]]; then
+    if [[ "${TIMEW_OUTPUT}" != "" ]]; then
+        timew stop > /dev/null
+    else
+        timew continue > /dev/null
+    fi
+fi
+
+# Get total time today
 TIMEW_OUTPUT=$(timew day | egrep "Tracked " | sed 's/ *Tracked *//')
 OUTPUT="${OUTPUT} ${TIMEW_OUTPUT}"
 
