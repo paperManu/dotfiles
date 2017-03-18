@@ -105,6 +105,7 @@ color=#dddddd
 
 [brightness]
 label=
+command=${HOME}/.config/i3/other-blocks/brightness
 interval=5
 min_width= 100%
 signal=5
