@@ -247,7 +247,7 @@ bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru
 #
 # Keyboard layout and behavior
 exec --no-startup-id "setxkbmap -layout us,fr -option ctrl:nocaps"
-exec --no-startup-id "xset r rate 250 30"
+exec --no-startup-id "xset r rate 250 40"
 # Change resolution
 exec "xrandr --output eDP1 --mode 2048x1152"
 # For keyboard layout handling
@@ -270,4 +270,4 @@ exec "gsettings set org.nemo.desktop show-desktop-icons false"
 # Disable touch screen
 exec_always xinput disable `xinput list | egrep "Atmel.*id=[0-9]*" | egrep -o "=[0-9]*" | egrep -o "[0-9]*"`
 # Autolock
-exec xautolock -time 5 -locker 'i3lock -c 000000' &
+exec xautolock -time 5 -corners ---- -detectsleep -locker 'i3lock -c 000000' &

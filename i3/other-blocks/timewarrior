@@ -25,6 +25,12 @@ fi
 
 # Get total time today
 TIMEW_OUTPUT=$(timew day | egrep "Tracked " | sed 's/ *Tracked *//')
+
+# If nothing has been done today, do not show anything
+if [[ "${TIMEW_OUTPUT}" == "0:00:00" ]]; then
+    exit
+fi
+
 OUTPUT="${OUTPUT} ${TIMEW_OUTPUT}"
 
 echo ${OUTPUT}
