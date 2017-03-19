@@ -30,7 +30,7 @@ separator_block_width=15
 markup=none
 
 [timewarrior]
-label=⚙
+label=✎
 command=${HOME}/.config/i3/other-blocks/timewarrior
 interval=5
 color=#dddddd
