@@ -50,6 +50,19 @@ interval=300
 color=#dddddd
 
 [bandwidth]
+instance=eno1;in
+label=
+interval=1
+min_width= 1024Mb
+
+[bandwidth]
+instance=eno1;out
+label=
+interval=1
+min_width= 1024Mb
+color=#dddddd
+
+[bandwidth]
 instance=enp7s0;in
 label=
 interval=1
