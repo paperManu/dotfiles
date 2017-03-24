@@ -204,9 +204,10 @@ mouse_warping none
 workspace_auto_back_and_forth yes
 
 # Lock, Logout, Suspend, HIbernate, Reboot and Shutdown
+set $locker xscreensaver-command -lock
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock -c 282c34 -i $wallpaper && sleep 1, mode "default"
+    bindsym l exec --no-startup-id $locker
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
@@ -273,8 +274,8 @@ exec_always --no-startup-id "gsettings set org.nemo.desktop show-desktop-icons f
 # MintUpdate
 exec --no-startup-id "mintupdate-launcher"
 # Disable touch screen
-exec_always xinput disable `xinput list | egrep "Atmel.*id=[0-9]*" | egrep -o "=[0-9]*" | egrep -o "[0-9]*"`
+exec_always --no-startup-id "xinput disable `xinput list | egrep \"Atmel.*id=[0-9]*\" | egrep -o \"=[0-9]*\" | egrep -o \"[0-9]*\"`"
 # Autolock
-exec xautolock -time 5 -corners ---- -detectsleep -locker 'i3lock -c 000000' &
+exec --no-startup-id "xscreensaver"
 # No sleep when fullscreen
-exec ${HOME}/.config/i3/scripts/lightson.sh &
+exec "${HOME}/.config/i3/scripts/lightson.sh &"
