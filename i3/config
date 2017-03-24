@@ -270,6 +270,8 @@ exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Disable Nautilus and Nemo desktop
 exec_always --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
 exec_always --no-startup-id "gsettings set org.nemo.desktop show-desktop-icons false"
+# MintUpdate
+exec --no-startup-id "mintupdate-launcher"
 # Disable touch screen
 exec_always xinput disable `xinput list | egrep "Atmel.*id=[0-9]*" | egrep -o "=[0-9]*" | egrep -o "[0-9]*"`
 # Autolock
