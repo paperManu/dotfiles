@@ -42,3 +42,12 @@ if [ ! -d ${HOME}/.vim ] ; then
 else
     echo "${HOME}/.vim : this directory already exists"
 fi
+
+#
+# xscreensaver
+#
+if [ ! -f ${HOME}/.xscreensaver ] ; then
+    ln -s ${source_directory}/xscreensaver ${HOME}/.xscreensaver
+else
+    echo "${HOME}/.xscreensaver : this file alreay exists"
+fi
