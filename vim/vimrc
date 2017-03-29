@@ -7,7 +7,7 @@ set expandtab
 set tabstop=4
 set guioptions-=T
 set guioptions-=m
-set guioptions-=r
+" set guioptions-=r
 set autochdir
 set autoindent
 set nowrap
