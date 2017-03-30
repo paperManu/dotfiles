@@ -5,9 +5,7 @@ set linebreak
 set number
 set expandtab
 set tabstop=4
-set guioptions-=T
-set guioptions-=m
-" set guioptions-=r
+set guioptions=tr
 set autochdir
 set autoindent
 set nowrap
