@@ -140,6 +140,7 @@ workspace "5:Misc" output DP-1
 #
 # Some windows are floating by default
 for_window [class="Splash*"] floating enable
+assign [class="Blender*"] "5:Misc"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
