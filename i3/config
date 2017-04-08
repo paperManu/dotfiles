@@ -95,7 +95,7 @@ bindsym $mod+a focus parent
 set $workspace1 1:Code
 set $workspace2 2:Net
 set $workspace3 3:Chat
-set $workspace4 4:Music
+set $workspace4 4:Media
 set $workspace5 5:Misc
 set $workspace6 6:6
 set $workspace7 7:7
@@ -134,7 +134,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 workspace "1:Code" output DVI-I-1
 workspace "2:Net" output DP-1
 workspace "3:Chat" output DP-1
-workspace "4:Music" output DP-1
+workspace "4:Media" output DP-1
 workspace "5:Misc" output DP-1
 
 #
