@@ -140,6 +140,9 @@ workspace "5:Misc" output DP-1
 #
 # Some windows are floating by default
 for_window [class="Splash*"] floating enable
+assign [class="Spotify*"] "4:Media"
+assign [class="Steam*"] "4:Media"
+assign [class="Butter*"] "4:Media"
 assign [class="Blender*"] "5:Misc"
 
 # resize window (you can also use the mouse for that)
