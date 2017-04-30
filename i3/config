@@ -139,11 +139,10 @@ workspace "5:Misc" output DP-1
 
 #
 # Some windows are floating by default
-for_window [class="Splash*"] floating enable
-assign [class="Spotify*"] "4:Media"
-assign [class="Steam*"] "4:Media"
-assign [class="Butter*"] "4:Media"
-assign [class="Blender*"] "5:Misc"
+for_window [class="Splash.*"] floating enable
+assign [class="Spotify.*"] "4:Media"
+assign [class="Steam.*"] "4:Media"
+assign [class="Blender.*"] "5:Misc"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -254,7 +253,7 @@ bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru
 # Startup applications
 #
 # Keyboard layout and behavior
-exec --no-startup-id "setxkbmap -layout us,fr -option ctrl:nocaps"
+exec --no-startup-id "setxkbmap -layout us,fr -option ctrl:nocaps -option compose:ralt"
 exec --no-startup-id "xset r rate 250 40"
 # Change resolution
 exec "xrandr --output eDP1 --mode 2048x1152"
