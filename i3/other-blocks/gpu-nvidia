@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if ! hash nvidia-smi 2> /dev/null; then
+    echo ""
+fi
+
+NVIDIA=$(nvidia-smi)
+USAGE=$(echo ${NVIDIA} | egrep -o '[0-9]+\% +Default' | egrep -o '[0-9]+')
+FREE_MEM=$(echo ${NVIDIA} | egrep -o '[0-9]+MiB /' | sed 's!MiB /!!')
+TOTAL_MEM=$(echo ${NVIDIA} | egrep -o '/ +[0-9]+MiB' | sed 's!/ *!!' | sed 's/MiB//')
+
+# Launch Nvidia-settings
+if [[ "${BLOCK_BUTTON}" != "" ]]; then
+    nvidia-settings &
+fi
+
+echo ${FREE_MEM}/${TOTAL_MEM}/${USAGE}%

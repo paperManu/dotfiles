@@ -10,12 +10,19 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Monospace\ Bold\ 9
+set guifont=Monospace\ Bold\ 8
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
 set so=5
 ino jj <Esc> 
+
+"-------------"
+" Folding settings
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
 
 " Latex related configuration
 " set runtimepath+=/usr/share/vim/addons/

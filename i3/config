@@ -132,10 +132,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 workspace "1:Code" output DVI-I-1
-workspace "2:Net" output DP-1
-workspace "3:Chat" output DP-1
-workspace "4:Media" output DP-1
-workspace "5:Misc" output DP-1
+workspace "2:Net" output DP-4
+workspace "3:Chat" output DP-4
+workspace "4:Media" output DP-4
+workspace "5:Misc" output DP-4
 
 #
 # Some windows are floating by default
