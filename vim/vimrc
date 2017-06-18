@@ -10,7 +10,7 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Monospace\ Bold\ 8
+set guifont=Monospace\ Bold\ 9
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
@@ -84,6 +84,7 @@ let g:Gitv_OpenHorizontal=1
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=1
+set tags=./tags;/
 
 "-------------"
 " a.vim
