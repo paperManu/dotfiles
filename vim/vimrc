@@ -10,12 +10,17 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Monospace\ Bold\ 9
+set guifont=Hack\ Bold\ 9
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
 set so=5
 ino jj <Esc> 
+
+set wildignore+=*.a,*.o
+set wildignore+=*.png,*.tga,*.tif,*.jpg
+set wildignore+=*.git
+set wildignore+=*.swp,*.tmp
 
 "-------------"
 " Folding settings
@@ -24,36 +29,50 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
-" Latex related configuration
-" set runtimepath+=/usr/share/vim/addons/
-filetype plugin on
-set grepprg=grep\ -nH\ $*i
-"filetype indent on
-let g:tex_flavor='latex'
-
 " Used to setup Vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+"-------------"
+" Plugins
 Bundle 'gmarik/vundle'
-Bundle 'jansenm/vim-cmake'
 Bundle 'Shougo/neocomplete.vim'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-session'
-Bundle 'vim-jp/cpp-vim'
-Bundle 'armyofevilrobots/vim-openscad'
-Bundle 'mbbill/undotree'
+
+" Git stuff
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
+
+" Theme
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'gregsexton/gitv'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'majutsushi/tagbar'
+
+" Usage
+Bundle 'xolox/vim-session'
 Bundle 'vim-scripts/a.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mbbill/undotree'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-vinegar'
+
+" Code highlight / format
 Bundle 'rhysd/vim-clang-format'
+Bundle 'nvie/vim-flake8'
+Bundle 'vim-jp/cpp-vim'
 Bundle 'fidian/hexmode'
+Bundle 'armyofevilrobots/vim-openscad'
+Bundle 'jansenm/vim-cmake'
+
+" Miscellaneous
+Bundle 'xolox/vim-misc'
 
 filetype plugin on
+
+"-------------"
+" Shortcuts
+nnoremap <F5> :NERDTreeToggle<CR>
 
 "-------------"
 " Theme
@@ -67,8 +86,18 @@ let g:session_autoload = 'no'
 set sessionoptions-=buffers
 
 "-------------"
+" Latex related configuration
+set grepprg=grep\ -nH\ $*i
+let g:tex_flavor='latex'
+
+"-------------"
+" vim-flake8
+let python_highlight_all=1
+
+"-------------"
 " Airline
-let g:airline_section_warning=''
+"let g:airline_section_warning=''
+let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#enabled = 0
 if has('gui_running')
     let g:airline_theme='solarized'

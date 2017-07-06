@@ -44,6 +44,14 @@ else
 fi
 
 #
+# Powerline fonts
+#
+cd /tmp
+git clone https://github.com/powerline/fonts.git
+cd fonts && ./install.sh
+cd ${source_directory}
+
+#
 # xscreensaver
 #
 if [ ! -f ${HOME}/.xscreensaver ] ; then
