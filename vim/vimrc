@@ -10,7 +10,7 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Hack\ Bold\ 9
+set guifont=Hack\ 9
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
