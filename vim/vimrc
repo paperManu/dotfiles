@@ -64,6 +64,7 @@ Bundle 'vim-jp/cpp-vim'
 Bundle 'fidian/hexmode'
 Bundle 'armyofevilrobots/vim-openscad'
 Bundle 'jansenm/vim-cmake'
+Bundle 'tikhomirov/vim-glsl'
 
 " Miscellaneous
 Bundle 'xolox/vim-misc'
@@ -73,6 +74,10 @@ filetype plugin on
 "-------------"
 " Shortcuts
 nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 "-------------"
 " Theme
