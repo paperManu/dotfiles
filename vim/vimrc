@@ -94,6 +94,11 @@ let g:session_autoload = 'no'
 set sessionoptions-=buffers
 
 "-------------"
+" Rooter
+let g:rooter_patterns = ['.git/']
+let g:rooter_silent_chdir = 1
+
+"-------------"
 " Latex related configuration
 set grepprg=grep\ -nH\ $*i
 let g:tex_flavor='latex'
