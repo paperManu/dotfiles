@@ -19,6 +19,7 @@ ino jj <Esc>
 
 set wildignore+=*.a,*.o
 set wildignore+=*.png,*.tga,*.tif,*.jpg
+set wildignore+=*.blend*
 set wildignore+=*.git
 set wildignore+=*.swp,*.tmp
 
@@ -56,6 +57,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mbbill/undotree'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-vinegar'
+Bundle 'airblade/vim-rooter'
 
 " Code highlight / format
 Bundle 'rhysd/vim-clang-format'
