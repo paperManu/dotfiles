@@ -74,6 +74,7 @@ filetype plugin on
 "-------------"
 " Shortcuts
 nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <F6> :UndotreeToggle \| UndotreeFocus<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
