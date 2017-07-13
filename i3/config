@@ -97,7 +97,7 @@ set $workspace2 2:Net
 set $workspace3 3:Chat
 set $workspace4 4:Media
 set $workspace5 5:Misc
-set $workspace6 6:6
+set $workspace6 6:Vim
 set $workspace7 7:7
 set $workspace8 8:8
 set $workspace9 9:9
@@ -112,6 +112,8 @@ bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
+# Vim has a special place
+bindsym $mod+Escape workspace $workspace6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -136,6 +138,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 workspace "1:Code" output DVI-I-1
+workspace "6:Vim" output DVI-I-1
 workspace "2:Net" output DP-4
 workspace "3:Chat" output DP-4
 workspace "4:Media" output DP-4
@@ -147,6 +150,7 @@ for_window [class="Splash.*"] floating enable
 assign [class="Spotify.*"] "4:Media"
 assign [class="Steam.*"] "4:Media"
 assign [class="Blender.*"] "5:Misc"
+assign [title="Render Pipeline.*"] "5:Misc"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
