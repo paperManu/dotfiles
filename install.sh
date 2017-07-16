@@ -59,3 +59,12 @@ if [ ! -f ${HOME}/.xscreensaver ] ; then
 else
     echo "${HOME}/.xscreensaver : this file alreay exists"
 fi
+
+#
+# Xresources
+#
+if [ ! -f ${HOME}/.Xresources ] ; then
+    ln -s ${source_directory}/Xresources ${HOME}/.Xresources
+else
+    echo "${HOME}/.Xresources : this file alreay exists"
+fi
