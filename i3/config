@@ -29,8 +29,10 @@ font pango:monospace bold 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# start various stuff
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec nemo
+bindsym $mod+Ctrl+Return exec gvim
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -41,8 +43,8 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec "rofi -font 'Hack 9' -combi-modi run,drun -show combi -modi combi -opacity 95"
-bindsym $mod+Shift+Tab exec "rofi -font 'Hack 9' -modi window -show window -opacity 95"
+bindsym $mod+d exec "rofi -font 'Hack 9' -combi-modi run,drun -show combi -modi combi -disable-history -separator-style solid -opacity 95"
+bindsym $mod+Shift+Tab exec "rofi -font 'Hack 9' -modi window -show window -separator-style solid -opacity 95"
 
 # change focus
 bindsym $mod+h focus left
