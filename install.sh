@@ -5,6 +5,7 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 # 
 # General stuff
 #
+sudo apt -y install git
 git submodule update --init
 
 #
