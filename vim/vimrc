@@ -5,7 +5,7 @@ set linebreak
 set number
 set expandtab
 set tabstop=4
-set guioptions=tr
+set guioptions=t
 set autochdir
 set autoindent
 set nowrap
@@ -43,7 +43,6 @@ Bundle 'Shougo/vimproc.vim'
 " Completion
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'osyo-manga/vim-marching'
-" Bundle 'davidhalter/jedi-vim'
 
 " Git stuff
 Bundle 'tpope/vim-fugitive'
@@ -58,9 +57,10 @@ Bundle 'majutsushi/tagbar'
 " Usage
 Bundle 'xolox/vim-session'
 Bundle 'vim-scripts/a.vim'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'mbbill/undotree'
 Bundle 'scrooloose/nerdtree'
+Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'tpope/vim-vinegar'
 Bundle 'airblade/vim-rooter'
 
@@ -81,7 +81,7 @@ filetype plugin on
 
 "-------------"
 " Shortcuts
-nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <F5> :NERDTreeFocus<CR>
 nnoremap <F6> :UndotreeToggle \| UndotreeFocus<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -103,6 +103,7 @@ set sessionoptions-=buffers
 " Rooter
 let g:rooter_patterns = ['.git/']
 let g:rooter_silent_chdir = 1
+let g:rooter_manual_only = 1
 
 "-------------"
 " Latex related configuration
@@ -131,12 +132,16 @@ let g:Gitv_OpenHorizontal=1
 "-------------"
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_autoclose=1
+let g:tagbar_autoclose=0
 set tags=./tags;/
 
 "-------------"
 " a.vim
 let g:alternateSearchPath = 'reg:#\<src\>$#include#,reg:#\<include\>$#src#'
+
+"-------------"
+" CtrlP
+let g:ctrlp_working_path_mode = 'ra'
 
 "-------------"
 " vim-clang-format
@@ -168,6 +173,14 @@ let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 4
 
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -192,15 +205,10 @@ if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 
-let g:neocomplete#force_omni_input_patterns.cpp =
-	\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.cpp = ''
+"	\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 set updatetime=200
-
-"-------------"
-" jedi-vim
-" let g:jedi#force_py_version = 3
-" let g:jedi#use_splits_not_buffers = "bottom"
 
 "-------------"
 " FastFold
