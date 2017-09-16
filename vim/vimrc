@@ -66,12 +66,12 @@ Bundle 'airblade/vim-rooter'
 
 " Code highlight / format
 Bundle 'rhysd/vim-clang-format'
-Bundle 'nvie/vim-flake8'
 Bundle 'vim-jp/cpp-vim'
 Bundle 'fidian/hexmode'
 Bundle 'armyofevilrobots/vim-openscad'
 Bundle 'jansenm/vim-cmake'
 Bundle 'tikhomirov/vim-glsl'
+Bundle 'vim-syntastic/syntastic'
 
 " Miscellaneous
 Bundle 'xolox/vim-misc'
@@ -188,6 +188,23 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+"-------------"
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_c_checkers = ['cppcheck']
+
+nmap <F3> :SyntasticCheck<CR>
+nmap <F4> :SyntasticToggleMode<CR>
 
 "-------------"
 " vim-marching

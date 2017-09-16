@@ -5,7 +5,7 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 # 
 # General stuff
 #
-sudo apt -y install git
+sudo apt -y install git cppcheck pylint
 git submodule update --init
 
 #
