@@ -45,6 +45,18 @@ else
 fi
 
 #
+# spacemacs
+#
+if [ ! -f ${HOME}/.spacemacs ] ; then
+    cd ~/
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    cd ${source_directory}
+    ln -s ${source_directory}/spacemacs ${HOME}/.spacemacs
+else
+    echo "${HOME}/.spacemacs : this file alreay exists"
+fi
+
+#
 # Powerline fonts
 #
 cd /tmp

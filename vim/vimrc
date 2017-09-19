@@ -199,9 +199,10 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -I./../include/'
 
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_c_checkers = ['cppcheck']
+let g:syntastic_c_checkers = ['gcc', 'cppcheck']
 
 nmap <F3> :SyntasticCheck<CR>
 nmap <F4> :SyntasticToggleMode<CR>
