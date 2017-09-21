@@ -72,6 +72,7 @@ Bundle 'armyofevilrobots/vim-openscad'
 Bundle 'jansenm/vim-cmake'
 Bundle 'tikhomirov/vim-glsl'
 Bundle 'vim-syntastic/syntastic'
+Bundle 'soramugi/auto-ctags.vim'
 
 " Miscellaneous
 Bundle 'xolox/vim-misc'
@@ -103,16 +104,12 @@ set sessionoptions-=buffers
 " Rooter
 let g:rooter_patterns = ['.git/']
 let g:rooter_silent_chdir = 1
-let g:rooter_manual_only = 1
+let g:rooter_manual_only = 0
 
 "-------------"
 " Latex related configuration
 set grepprg=grep\ -nH\ $*i
 let g:tex_flavor='latex'
-
-"-------------"
-" vim-flake8
-let python_highlight_all=1
 
 "-------------"
 " Airline
@@ -134,6 +131,16 @@ let g:Gitv_OpenHorizontal=1
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=0
 set tags=./tags;/
+
+" Open definition in another split (horizontal or vertical)
+map <C-\> :split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+"-------------"
+" auto-ctags.vim
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git']
+let g:auto_ctags_tags_name = 'tags'
 
 "-------------"
 " a.vim
