@@ -2,6 +2,12 @@
 
 if ! hash nvidia-smi 2> /dev/null; then
     echo ""
+    exit
+fi
+
+if [[ $(nvidia-smi | grep "Driver Version") == "" ]]; then
+    echo ""
+    exit
 fi
 
 NVIDIA=$(nvidia-smi)

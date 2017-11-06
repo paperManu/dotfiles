@@ -270,8 +270,9 @@ bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru
 # Keyboard layout and behavior
 exec --no-startup-id "setxkbmap -layout us,fr -option ctrl:nocaps -option compose:ralt"
 exec --no-startup-id "xset r rate 250 40"
-# Change resolution
+# Change resolution, for Asus UX303LN
 exec "xrandr --output eDP1 --mode 2048x1152"
+#exec "xrandr --output eDP1 --gamma 2:2:2"
 # For keyboard layout handling
 exec --no-startup-id "kbdd"
 # Wallpaper
