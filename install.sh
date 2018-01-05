@@ -5,7 +5,7 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 # 
 # General stuff
 #
-sudo apt -y install git cppcheck pylint arc-theme
+sudo apt -y install git cppcheck pylint arc-theme cifs-utils
 git submodule update --init
 
 #
