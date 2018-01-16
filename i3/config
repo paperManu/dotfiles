@@ -32,7 +32,7 @@ floating_modifier $mod
 
 # start various stuff
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec nautilus
+bindsym $mod+Shift+Return exec "if hash nemo; then nemo; else nautilus; fi"
 bindsym $mod+Ctrl+Return exec gvim
 
 # kill focused window
@@ -283,8 +283,9 @@ exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "devmon --no-gui"
 # Network manager
 exec --no-startup-id "nm-applet"
-# Dropbox
+# Dropbox and Owncloud
 exec --no-startup-id "dropbox start"
+exec --no-startup-id "owncloud"
 # Compton
 exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Disable Nautilus and Nemo desktop
