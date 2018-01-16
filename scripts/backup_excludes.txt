@@ -1,0 +1,20 @@
+Apps/nohup.out
+Downloads/*
+Dolphin/*
+Desktop/*
+GOG Games/*
+Photos/*
+These/*
+Music/*
+tmp/*
+dd_backup/*
+VirtualBox VMs/*
+.cache/*
+.local/share/Steam/*
+.PlayOnLinux/*
+.steam/*
+nohup.out
+
+*.o
+*.lo
+*.la
