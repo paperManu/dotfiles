@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export TIMEWARRIORDB=~/Dropbox/tasks/timewarrior
+export TIMEWARRIORDB=~/ownCloud/tasks/timewarrior
 
 TIMEW_OUTPUT=$(timew | egrep "Tracking ")
 
