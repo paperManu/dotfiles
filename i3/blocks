@@ -63,13 +63,13 @@ min_width= 1024Mb
 color=#dddddd
 
 [bandwidth]
-instance=enp7s0;in
+instance=enp8s0;in
 label=
 interval=1
 min_width= 1024Mb
 
 [bandwidth]
-instance=enp7s0;out
+instance=enp8s0;out
 label=
 interval=1
 min_width= 1024Mb
@@ -90,7 +90,7 @@ color=#dddddd
 
 [network]
 label=
-instance=enp7s0
+instance=enp8s0
 interval=10
 min_width= on
 

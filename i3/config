@@ -238,7 +238,7 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 
 # Volume & Media Keys
-set $pulse_audio_sink 1
+set $pulse_audio_sink 0
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $pulse_audio_sink +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $pulse_audio_sink -5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $pulse_audio_sink toggle && pkill -RTMIN+10 i3blocks

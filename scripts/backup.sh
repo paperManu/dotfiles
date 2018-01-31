@@ -15,6 +15,6 @@ rsync --archive --one-file-system --human-readable --inplace --numeric-ids --del
 DISTANT_PASSWORD_FILE="/tmp/rsync_password"
 scp ${PASSWORD_FILE} mathildemoreau@lemiel.local:${DISTANT_PASSWORD_FILE}
 ssh mathildemoreau@lemiel.local rsync --archive --compress --one-file-system --human-readable --inplace --numeric-ids --delete \
-    --compress-level=1 --delete-excluded --exclude '${HOME}/Downloads/*' --exclude '${HOME}/Dropbox/*' --exclude '${HOME}/.Trash/*' --verbose \
+    --compress-level=1 --delete-excluded --exclude='Downloads/*' --exclude='Dropbox/*' --exclude='.Trash/*' --verbose \
     --password-file=${DISTANT_PASSWORD_FILE} /Users/mathildemoreau/ rsync://root@superthenas.local:/Archive/Backup/Mathilde/
 ssh mathildemoreau@lemiel.local rm ${DISTANT_PASSWORD_FILE}
