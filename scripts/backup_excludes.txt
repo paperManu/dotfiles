@@ -6,6 +6,7 @@ GOG Games/*
 Photos/*
 These/*
 Music/*
+ownCloud/*
 tmp/*
 dd_backup/*
 VirtualBox VMs/*
