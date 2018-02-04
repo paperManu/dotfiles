@@ -7,6 +7,7 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 #
 sudo apt -y install git cppcheck pylint arc-theme cifs-utils
 git submodule update --init
+sudo cp scripts/backup.sh /usr/local/bin/
 
 #
 # Bash

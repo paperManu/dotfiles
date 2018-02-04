@@ -11,6 +11,7 @@ dd_backup/*
 VirtualBox VMs/*
 .cache/*
 .local/share/Steam/*
+.local/share/Trash/*
 .PlayOnLinux/*
 .steam/*
 nohup.out
