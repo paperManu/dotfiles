@@ -37,46 +37,40 @@ call vundle#rc()
 
 "-------------"
 " Plugins
-Bundle 'gmarik/vundle'
-Bundle 'Shougo/vimproc.vim'
+Plugin 'gmarik/vundle'
+Plugin 'Shougo/vimproc.vim'
 
 " Completion
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'osyo-manga/vim-marching'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'osyo-manga/vim-marching'
 
 " Git stuff
-Bundle 'tpope/vim-fugitive'
-" Bundle 'gregsexton/gitv'
+Plugin 'tpope/vim-fugitive'
 
 " Theme
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'majutsushi/tagbar'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
 
 " Usage
-Bundle 'xolox/vim-session'
-Bundle 'vim-scripts/a.vim'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'mbbill/undotree'
-Bundle 'scrooloose/nerdtree'
-" Bundle 'Xuyuanp/nerdtree-git-plugin'
-Bundle 'tpope/vim-vinegar'
-Bundle 'airblade/vim-rooter'
+Plugin 'xolox/vim-session'
+Plugin 'vim-scripts/a.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mbbill/undotree'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-vinegar'
+Plugin 'airblade/vim-rooter'
 
 " Code highlight / format
-Bundle 'rhysd/vim-clang-format'
-" Bundle 'vim-jp/cpp-vim'
-" Bundle 'fidian/hexmode'
-" Bundle 'armyofevilrobots/vim-openscad'
-" Bundle 'jansenm/vim-cmake'
-Bundle 'tikhomirov/vim-glsl'
-Bundle 'vim-syntastic/syntastic'
-Bundle 'soramugi/auto-ctags.vim'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'w0rp/ale'
+Plugin 'soramugi/auto-ctags.vim'
 
 " Miscellaneous
-Bundle 'xolox/vim-misc'
-Bundle 'Konfekt/FastFold'
+Plugin 'xolox/vim-misc'
+Plugin 'Konfekt/FastFold'
 
 filetype plugin on
 
@@ -116,15 +110,12 @@ let g:tex_flavor='latex'
 "let g:airline_section_warning=''
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#enabled = 0
+let g:airline#extensions#ale#enabled = 1
 if has('gui_running')
     let g:airline_theme='solarized'
 else
     let g:airline_theme='dark'
 endif
-
-"-------------"
-" Gitv
-" let g:Gitv_OpenHorizontal=1
 
 "-------------"
 " Tagbar
@@ -197,28 +188,8 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "-------------"
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = ' -std=c++14 -I../include/'
-
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_c_checkers = ['gcc', 'cppcheck']
-let g:syntastic_cpp_checkers = ['cppcheck']
-
-let g:syntastic_cpp_cppcheck_args = "--enable=all"
-
-nmap <F3> :SyntasticCheck<CR>
-nmap <F4> :SyntasticToggleMode<CR>
-nmap sn :lnext<CR>
-nmap sp :lprevious<CR>
-nmap sl :Errors<CR>
+" ale
+let g:ale_lint_on_text_changed = 'never'
 
 "-------------"
 " vim-marching
