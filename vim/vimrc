@@ -98,7 +98,7 @@ set sessionoptions-=buffers
 
 "-------------"
 " Rooter
-let g:rooter_patterns = ['.git/']
+let g:rooter_patterns = ['.git']
 let g:rooter_silent_chdir = 1
 let g:rooter_manual_only = 0
 
@@ -192,6 +192,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "-------------"
 " ale
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_python_flake8_options = '--ignore=E501,E225'
 
 "-------------"
 " vim-marching
