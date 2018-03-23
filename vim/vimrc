@@ -17,11 +17,11 @@ set undodir=/home/manu/.vimundo/
 set so=5
 ino jj <Esc> 
 
-set wildignore+=*.a,*.o
-set wildignore+=*.png,*.tga,*.tif,*.jpg
-set wildignore+=*.blend*
-set wildignore+=*.git
-set wildignore+=*.swp,*.tmp
+" set wildignore+=*.a,*.o
+" set wildignore+=*.png,*.tga,*.tif,*.jpg
+" set wildignore+=*.blend*
+" set wildignore+=*.git
+" set wildignore+=*.swp,*.tmp
 
 "-------------"
 " Folding settings
@@ -60,7 +60,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-vinegar'
-Plugin 'airblade/vim-rooter'
+" Plugin 'airblade/vim-rooter'
 
 " Code highlight / format
 Plugin 'rhysd/vim-clang-format'
@@ -98,9 +98,9 @@ set sessionoptions-=buffers
 
 "-------------"
 " Rooter
-let g:rooter_patterns = ['.git']
-let g:rooter_silent_chdir = 1
-let g:rooter_manual_only = 0
+" let g:rooter_patterns = ['.git']
+" let g:rooter_silent_chdir = 1
+" let g:rooter_manual_only = 0
 
 "-------------"
 " Latex related configuration
@@ -192,6 +192,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "-------------"
 " ale
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
 let g:ale_python_flake8_options = '--ignore=E501,E225'
 
 "-------------"
@@ -221,3 +223,10 @@ nmap zuz <Plug>(FastFoldUpdate)
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
+
+"-------------"
+" Some project-specific configuration
+" ------------"
+let $MYPYPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/EditionInSitu/extlib/py-satmath:/home/manu/src/EditionInSitu/extlib/py-satnet:/usr/local/lib/python3.6/dist-packages"
+let $PYTHONPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/EditionInSitu/extlib/py-satmath:/home/manu/src/EditionInSitu/extlib/py-satnet:/usr/local/lib/python3.6/dist-packages"
