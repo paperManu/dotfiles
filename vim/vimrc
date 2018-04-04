@@ -60,7 +60,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-vinegar'
-" Plugin 'airblade/vim-rooter'
 
 " Code highlight / format
 Plugin 'rhysd/vim-clang-format'
@@ -95,12 +94,6 @@ colorscheme solarized
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 set sessionoptions-=buffers
-
-"-------------"
-" Rooter
-" let g:rooter_patterns = ['.git']
-" let g:rooter_silent_chdir = 1
-" let g:rooter_manual_only = 0
 
 "-------------"
 " Latex related configuration
@@ -195,6 +188,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_python_flake8_options = '--ignore=E501,E225'
+let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']
 
 "-------------"
 " vim-marching
