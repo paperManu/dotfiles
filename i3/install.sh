@@ -5,7 +5,7 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 sudo apt install i3 i3-wm i3status i3blocks suckless-tools feh compton gtk-chtheme \
     qt4-qtconfig sysstat acpi git automake build-essential gtk-doc-tools \
     gobject-introspection xbacklight scrot kbdd xautolock pavucontrol xscreensaver rofi \
-    fonts-font-awesome
+    fonts-font-awesome ssh-askpass
 
 # Install playerctl
 cd /tmp && rm -rf playerctl

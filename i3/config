@@ -297,5 +297,7 @@ exec --no-startup-id "mintupdate-launcher"
 exec_always --no-startup-id "xinput disable `xinput list | egrep \"Atmel.*id=[0-9]*\" | egrep -o \"=[0-9]*\" | egrep -o \"[0-9]*\"`"
 # Autolock
 exec --no-startup-id "xscreensaver"
+# Ask SSH password
+exec --no-startup-id ssh-add
 # No sleep when fullscreen
 exec "${HOME}/.config/i3/scripts/lightson.sh &"
