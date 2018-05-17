@@ -5,14 +5,16 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 # 
 # General stuff
 #
-sudo apt -y install git cppcheck pylint arc-theme cifs-utils
+sudo apt -y install git cppcheck arc-theme cifs-utils \
+    mypy flake8 autopep8 spellcheck clang-format
+
 git submodule update --init
 sudo cp scripts/backup.sh /usr/local/bin/
 
 #
 # Bash
 #
-if [ ! -d ${HOME}/.bashrc ] ; then
+if [[ ! -d ${HOME}/.bashrc ]] ; then
     ln -s ${source_directory}/bashrc ${HOME}/.bashrc
 else
     echo "${HOME}/.bashrc : this file already exists"

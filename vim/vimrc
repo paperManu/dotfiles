@@ -83,6 +83,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nmap sn :lnext<CR>
 nmap sp :lprevious<CR>
+nmap cn :cn<CR>
+nmap cp :cp<CR>
 
 "-------------"
 " Theme
@@ -187,6 +189,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
+let g:ale_linters = {
+\   'python': ['flake8', 'mypy']
+\}
 let g:ale_python_flake8_options = '--ignore=E501,E225'
 let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']
 
@@ -222,5 +227,5 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 "-------------"
 " Some project-specific configuration
 " ------------"
-let $MYPYPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/EditionInSitu/extlib/py-satmath:/home/manu/src/EditionInSitu/extlib/py-satnet:/usr/local/lib/python3.6/dist-packages"
-let $PYTHONPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/EditionInSitu/extlib/py-satmath:/home/manu/src/EditionInSitu/extlib/py-satnet:/usr/local/lib/python3.6/dist-packages"
+let $MYPYPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/EditionInSitu/extlib/py-satmath:/home/manu/src/EditionInSitu/extlib/py-satnet:/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages"
+let $PYTHONPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/EditionInSitu/extlib/py-satmath:/home/manu/src/EditionInSitu/extlib/py-satnet:/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages"
