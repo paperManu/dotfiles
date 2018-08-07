@@ -46,6 +46,7 @@ Plugin 'osyo-manga/vim-marching'
 
 " Git stuff
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/gv.vim'
 
 " Theme
 Plugin 'altercation/vim-colors-solarized'
@@ -127,6 +128,7 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 "-------------"
 " auto-ctags.vim
 let g:auto_ctags = 1
+let g:auto_ctags_search_recursively = 1
 let g:auto_ctags_directory_list = ['.git']
 let g:auto_ctags_tags_name = 'tags'
 
