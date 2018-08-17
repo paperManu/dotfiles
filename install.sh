@@ -6,9 +6,13 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 # General stuff
 #
 sudo apt -y install git cppcheck arc-theme cifs-utils \
-    mypy flake8 autopep8 spellcheck clang-format
+    byobu clang-format exuberant-ctags python3-pip \
+    openvpn network-manager-openvpn-gnome resolvconf \
+    zsh lx-appearance owncloud-client timewarrior exuberant-ctags
 
-git submodule update --init
+sudo pip3 install flake8 autopep8 mypy
+
+git submodule update --init --recursive
 sudo cp scripts/backup.sh /usr/local/bin/
 
 #
@@ -18,6 +22,22 @@ if [[ ! -d ${HOME}/.bashrc ]] ; then
     ln -s ${source_directory}/bashrc ${HOME}/.bashrc
 else
     echo "${HOME}/.bashrc : this file already exists"
+fi
+
+#
+# zsh
+#
+if [[ ! -d ${HOME}/.zprezto ]] ; then
+    ln -s ${source_directory}/zprezto ${HOME}/.zprezto
+    cd ${HOME}/.zprezto
+    setopt EXTENDED_GLOB
+    for rcfile in "${$HOME}"/.zprezto/runcoms/^README.md(.N); do
+      ln -s "$rcfile" "${$HOME}/.${rcfile:t}"
+    done
+    cd ${source_directory}
+    chsh -s /bin/zsh
+else
+    echo "${HOME}/.zprezto : this directory already exists"
 fi
 
 #
