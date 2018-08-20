@@ -3,11 +3,11 @@
 PULSE_AUDIO_SINK=1
 
 if [[ "${BLOCK_BUTTON}" == "4" ]]; then
-    pactl set-sink-volume ${PULSE_AUDIO_SINK} +5% && pkill -RTMIN+10 i3blocks
+    pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
 elif [[ "${BLOCK_BUTTON}" == "5" ]]; then
-    pactl set-sink-volume ${PULSE_AUDIO_SINK} -5% && pkill -RTMIN+10 i3blocks
+    pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
 elif [[ "${BLOCK_BUTTON}" == "1" ]]; then
-    pactl set-sink-mute ${PULSE_AUDIO_SINK} toggle && pkill -RTMIN+10 i3blocks
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
 elif [[ "${BLOCK_BUTTON}" == "3" ]]; then
     pavucontrol
 fi
