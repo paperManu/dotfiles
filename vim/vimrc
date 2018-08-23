@@ -17,6 +17,8 @@ set undodir=/home/manu/.vimundo/
 set so=5
 ino jj <Esc> 
 
+let mapleader=","
+
 " set wildignore+=*.a,*.o
 " set wildignore+=*.png,*.tga,*.tif,*.jpg
 " set wildignore+=*.blend*
@@ -66,7 +68,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'w0rp/ale'
-Plugin 'soramugi/auto-ctags.vim'
+" Plugin 'soramugi/auto-ctags.vim'
 
 " Miscellaneous
 Plugin 'xolox/vim-misc'
@@ -139,6 +141,7 @@ let g:alternateSearchPath = 'reg:#\<src\>$#include#,reg:#\<include\>$#src#'
 "-------------"
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra'
+nnoremap <leader><C-P> :CtrlPTag<cr>
 
 "-------------"
 " vim-clang-format
