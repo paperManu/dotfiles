@@ -25,6 +25,9 @@ let mapleader=","
 " set wildignore+=*.git
 " set wildignore+=*.swp,*.tmp
 
+" Activate the man pages using :Man
+runtime ftplugin/man.vim
+
 "-------------"
 " Folding settings
 set foldmethod=syntax
@@ -57,7 +60,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 
 " Usage
-Plugin 'xolox/vim-session'
+" Plugin 'xolox/vim-session'
 Plugin 'vim-scripts/a.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
@@ -96,9 +99,9 @@ colorscheme solarized
 
 "-------------"
 " Vim-session
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
-set sessionoptions-=buffers
+" let g:session_autosave = 'no'
+" let g:session_autoload = 'no'
+" set sessionoptions-=buffers
 
 "-------------"
 " Latex related configuration
