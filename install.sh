@@ -13,7 +13,7 @@ sudo apt -y install git cppcheck arc-theme cifs-utils \
 sudo pip3 install flake8 autopep8 mypy
 
 git submodule update --init --recursive
-sudo cp scripts/backup.sh /usr/local/bin/
+sudo ln -s $(pwd)/scripts/backup.sh /usr/local/bin/backup.sh
 
 #
 # Bash

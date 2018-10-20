@@ -15,6 +15,11 @@ if [ ${target} = "local" ] ; then
     rsync --archive --one-file-system --human-readable --inplace --numeric-ids --delete --progress --stats \
           --compress-level=1 --verbose --password-file=${PASSWORD_FILE} \
           /home/manu/Photos rsync://root@superthenas.local/Archive/Photos/Manu
+
+    # Music is saved in a separate folder
+    rsync --archive --one-file-system --human-readable --inplace --numeric-ids --delete --progress --stats \
+          --compress-level=1 --verbose --password-file=${PASSWORD_FILE} \
+          /home/manu/Music/* rsync://root@superthenas.local/Archive/Musique
   fi
 elif [ ${target} = "mathilde" ] ; then
   # Backup Mathilde's computer
