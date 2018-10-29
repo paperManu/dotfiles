@@ -114,6 +114,8 @@ let g:tex_flavor='latex'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#wordcount#filetypes = ['tex', 'md']
 if has('gui_running')
     let g:airline_theme='solarized'
 else
