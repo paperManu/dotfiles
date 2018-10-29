@@ -104,3 +104,9 @@ if [ ! -f ${HOME}/.Xresources ] ; then
 else
     echo "${HOME}/.Xresources : this file alreay exists"
 fi
+
+#
+# .profile
+#
+rm ${HOME}/.profile
+ln -s ${source_directory}/profile ${HOME}/.profile
