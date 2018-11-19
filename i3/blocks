@@ -76,6 +76,19 @@ min_width= 1024Mb
 color=#dddddd
 
 [bandwidth]
+instance=wlp4s0;in
+label=
+interval=1
+min_width= 1024Mb
+
+[bandwidth]
+instance=wlp4s0;out
+label=
+interval=1
+min_width= 1024Mb
+color=#dddddd
+
+[bandwidth]
 instance=wlp2s0;in
 label=
 interval=1

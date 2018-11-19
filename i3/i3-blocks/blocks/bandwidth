@@ -26,7 +26,7 @@ URGENT_VALUE="${ONE_MB}"
 PREV_IN=0
 PREV_OUT=0
 
-PREV_FILE="/tmp/.bandwidth"
+PREV_FILE="/tmp/.bandwidth_${INSTANCE}"
 
 if [[ -f "${PREV_FILE}" ]]; then
   PREV_CONT=$(cat "${PREV_FILE}")
