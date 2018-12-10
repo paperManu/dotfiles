@@ -15,7 +15,7 @@ if [[ "${TIMEW_OUTPUT}" != "" ]]; then
 fi
 
 # Stop/continue task
-if [[ "${BLOCK_BUTTON}" != "" ]]; then
+if [[ "${BLOCK_BUTTON}" == "3" ]]; then
     if [[ "${TIMEW_OUTPUT}" != "" ]]; then
         timew stop > /dev/null
     else
