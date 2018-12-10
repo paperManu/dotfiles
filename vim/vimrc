@@ -93,6 +93,9 @@ nmap sp :lprevious<CR>
 nmap cn :cn<CR>
 nmap cp :cp<CR>
 
+" Commands
+command -nargs=1 Toilet read !toilet --font future "<args>"
+
 "-------------"
 " Theme
 set background=dark
