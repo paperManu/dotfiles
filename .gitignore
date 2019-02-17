@@ -1,3 +1,4 @@
 *.swp
 i3/xkblayout-state
 vim/bundle/*
+weechat/urls.log

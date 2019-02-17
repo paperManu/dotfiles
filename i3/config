@@ -275,7 +275,7 @@ exec --no-startup-id "kbdd"
 # Wallpaper
 exec_always "feh --bg-scale $wallpaper"
 # Pulse Audio
-exec --no-startup-id "pulseaudio --start"
+# exec --no-startup-id "pulseaudio --start"
 # Auto mount USB
 exec --no-startup-id "devmon --no-gui"
 # Network manager
