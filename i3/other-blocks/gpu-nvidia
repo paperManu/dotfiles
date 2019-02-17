@@ -16,7 +16,7 @@ FREE_MEM=$(echo ${NVIDIA} | egrep -o '[0-9]+MiB /' | sed 's!MiB /!!')
 TOTAL_MEM=$(echo ${NVIDIA} | egrep -o '/ +[0-9]+MiB' | sed 's!/ *!!' | sed 's/MiB//')
 
 # Launch Nvidia-settings
-if [[ "${BLOCK_BUTTON}" != "" ]]; then
+if [[ "${BLOCK_BUTTON}" != "3" ]]; then
     nvidia-settings &
 fi
 
