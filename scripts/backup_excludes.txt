@@ -11,6 +11,7 @@ tmp/*
 dd_backup/*
 VirtualBox VMs/*
 .cache/*
+.local/share/Daedalus/*
 .local/share/Steam/*
 .local/share/Trash/*
 .PlayOnLinux/*
