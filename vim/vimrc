@@ -130,7 +130,7 @@ endif
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=0
-set tags=./tags;/
+set tags^=./.git/tags;
 
 " Open definition in another split (horizontal or vertical)
 map <C-\> :split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -210,6 +210,7 @@ let g:ale_linters = {
 \}
 let g:ale_python_flake8_options = '--ignore=E501,E225'
 let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']
+let g:ale_cpp_cppcheck_options = '--enable=style'
 
 "-------------"
 " vim-marching
