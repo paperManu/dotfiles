@@ -33,7 +33,6 @@ markup=none
 label=✎
 command=${HOME}/.config/i3/other-blocks/timewarrior
 interval=5
-color=#dddddd
 
 [volume]
 label=♪
@@ -42,18 +41,19 @@ instance=Master
 interval=once
 min_width=♪ 100%
 signal=10
+color=#dddddd
 
 [weather]
 instance=6077243
 command=${HOME}/.config/i3/other-blocks/weather
 interval=300
-color=#dddddd
 
 [bandwidth]
 instance=eno1;in
 label=
 interval=1
 min_width= 1024Mb
+color=#dddddd
 
 [bandwidth]
 instance=eno1;out
@@ -63,26 +63,14 @@ min_width= 1024Mb
 color=#dddddd
 
 [bandwidth]
-instance=enp8s0;in
+instance=enp10s0;in
 label=
 interval=1
 min_width= 1024Mb
-
-[bandwidth]
-instance=enp8s0;out
-label=
-interval=1
-min_width= 1024Mb
 color=#dddddd
 
 [bandwidth]
-instance=wlp4s0;in
-label=
-interval=1
-min_width= 1024Mb
-
-[bandwidth]
-instance=wlp4s0;out
+instance=enp10s0;out
 label=
 interval=1
 min_width= 1024Mb
@@ -93,6 +81,7 @@ instance=wlp2s0;in
 label=
 interval=1
 min_width= 1024Mb
+color=#dddddd
 
 [bandwidth]
 instance=wlp2s0;out
@@ -103,20 +92,45 @@ color=#dddddd
 
 [network]
 label=
-instance=enp8s0
+instance=wlp2s0
 interval=10
 min_width= on
+color=#dddddd
 
 [network]
 label=
 instance=wlp2s0
 interval=10
 min_width= 100%
+color=#dddddd
 
 [gpu]
 label=
 command=${HOME}/.config/i3/other-blocks/gpu-nvidia
 min_width= 1024/1024/100%
+interval=1
+
+[gpu]
+label=
+command=${HOME}/.config/i3/other-blocks/gpu-amd-vega-memory
+min_width= 1024/1024GB
+interval=1
+
+[gpu]
+label=
+command=${HOME}/.config/i3/other-blocks/gpu-amd-vega-core
+min_width= 100%
+interval=1
+
+[gpu]
+command=${HOME}/.config/i3/other-blocks/gpu-amd-vega-oc
+min_width=>>>
+interval=5
+
+[gpu]
+label=
+command=${HOME}/.config/i3/other-blocks/gpu-amd-vega-temp
+min_width= 99°C
 interval=1
 
 [memory]
@@ -129,11 +143,23 @@ color=#dddddd
 label=
 instance=swap;free
 interval=30
+color=#dddddd
+
+[cpu]
+label=
+interval=2
+min_width= 100%
+color=#dddddd
+
+[temperature]
+instance=Core
+label=
+interval=5
+color=#dddddd
 
 [ip-address]
 label=
 interval=60
-color=#dddddd
 
 [brightness]
 label=
@@ -141,11 +167,6 @@ command=${HOME}/.config/i3/other-blocks/brightness
 interval=5
 min_width= 100%
 signal=5
-
-[cpu]
-label=
-interval=2
-min_width= 100%
 color=#dddddd
 
 [battery]
@@ -154,19 +175,13 @@ command=${HOME}/.config/i3/other-blocks/battery
 interval=30
 min_width= 100%
 
-[temperature]
-instance=Core
-label=
-interval=5
-color=#dddddd
-
 [keymap]
 label=
 command=${HOME}/.config/i3/other-blocks/keymap
 interval=1
 signal=1
+color=#dddddd
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
-color=#dddddd
