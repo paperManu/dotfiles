@@ -77,6 +77,8 @@ Plugin 'w0rp/ale'
 " Miscellaneous
 Plugin 'xolox/vim-misc'
 Plugin 'Konfekt/FastFold'
+Plugin 'vimwiki/vimwiki'
+Plugin 'kyuhi/vim-emoji-complete'
 
 filetype plugin on
 
@@ -245,6 +247,10 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_list_hide = '.*\.swp$,.*.so,.*.o'
+
+"-------------"
+" vimwiki
+let g:vimwiki_list = [{'path': '~/ownCloud/vimwiki'}]
 
 "-------------"
 " Some project-specific configuration
