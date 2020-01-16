@@ -210,6 +210,8 @@ let g:ale_linters = {
 \}
 let g:ale_python_flake8_options = '--ignore=E501,E225'
 let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']
+let g:ale_cpp_clang_options = '-std=c++17'
+let g:ale_cpp_gcc_options = '-std=c++17'
 
 "-------------"
 " vim-marching
@@ -243,7 +245,7 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 " vinegar
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_list_hide = '.*\.swp$,.*.so'
+let g:netrw_list_hide = '.*.swp,.*.so'
 
 "-------------"
 " Some project-specific configuration
