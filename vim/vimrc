@@ -10,11 +10,11 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Hack\ 9
+set guifont=Hack\ 8.5
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
-set so=5
+set scrolloff=5
 set display+=lastline
 ino jj <Esc> 
 
@@ -77,6 +77,8 @@ Plugin 'w0rp/ale'
 " Miscellaneous
 Plugin 'xolox/vim-misc'
 Plugin 'Konfekt/FastFold'
+Plugin 'vimwiki/vimwiki'
+Plugin 'kyuhi/vim-emoji-complete'
 
 filetype plugin on
 
@@ -130,7 +132,7 @@ endif
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=0
-set tags=./tags;/
+set tags^=./.git/tags;
 
 " Open definition in another split (horizontal or vertical)
 map <C-\> :split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -212,6 +214,7 @@ let g:ale_python_flake8_options = '--ignore=E501,E225'
 let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']
 let g:ale_cpp_clang_options = '-std=c++17'
 let g:ale_cpp_gcc_options = '-std=c++17'
+let g:ale_cpp_cppcheck_options = '--enable=style'
 
 "-------------"
 " vim-marching
@@ -246,6 +249,10 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_list_hide = '.*.swp,.*.so'
+
+"-------------"
+" vimwiki
+let g:vimwiki_list = [{'path': '~/ownCloud/vimwiki'}]
 
 "-------------"
 " Some project-specific configuration

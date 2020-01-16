@@ -8,13 +8,16 @@ fi
 
 BATTERY=0
 BATTERY_INFO=$(acpi -b | grep "Battery ${BATTERY}")
+BATTERY_PRESENT=$(echo "${BATTERY_INFO}" | grep -wo "unavailable")
 BATTERY_STATE=$(echo "${BATTERY_INFO}" | grep -wo "Full\|Charging\|Discharging")
 BATTERY_POWER=$(echo "${BATTERY_INFO}" | grep -o '[0-9]\+%' | tr -d '%')
 BATTERY_TIME=$(echo "${BATTERY_INFO}" | grep -o '[0-9]\+:[0-9]\+:[0-9]\+')
 
 URGENT_VALUE=10
 
-if [[ "${BATTERY_STATE}" = "Charging" ]]; then
+if [[ "${BATTERY_PRESENT}" = "unavailable" ]]; then
+  exit
+elif [[ "${BATTERY_STATE}" = "Charging" ]]; then
   echo "${BATTERY_POWER}%+"
   echo "${BATTERY_POWER}%+"
   echo ""

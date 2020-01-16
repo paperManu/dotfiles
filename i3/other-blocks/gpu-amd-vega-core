@@ -1,0 +1,16 @@
+#!/bin/bash
+
+URGENT_VALUE=90
+
+if ! hash radeontop 2> /dev/null; then
+    echo ""
+    exit
+fi
+
+USAGE=$(cat /sys/class/drm/card0/device/gpu_busy_percent)
+
+echo ${USAGE}%
+
+if [[ "${USAGE}" -gt "${URGENT_VALUE}" ]]; then
+    exit 33
+fi

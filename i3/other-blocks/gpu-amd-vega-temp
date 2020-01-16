@@ -1,0 +1,16 @@
+#!/bin/bash
+
+URGENT_VALUE=75
+
+if ! hash radeontop 2> /dev/null; then
+    echo ""
+    exit
+fi
+
+TEMP=$(expr $(cat /sys/class/drm/card0/device/hwmon/hwmon3/temp1_input) / 1000)
+
+echo "~ ${TEMP}°C"
+
+if [[ "${TEMP}" -gt "${URGENT_VALUE}" ]]; then
+    exit 33
+fi

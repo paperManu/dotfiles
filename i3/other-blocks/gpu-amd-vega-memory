@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if ! hash radeontop 2> /dev/null; then
+    echo ""
+    exit
+fi
+
+USAGE=$(cat /sys/class/drm/card0/device/gpu_busy_percent)
+USED_MEM=$(expr $(cat /sys/class/drm/card0/device/mem_info_vram_used) / 1048576)
+TOTAL_MEM=$(expr $(cat /sys/class/drm/card0/device/mem_info_vram_total) / 1048576)
+
+echo ${USED_MEM}/${TOTAL_MEM}gb
+
+URGENT_VALUE=$(expr ${TOTAL_MEM} / 10 \* 9)
+
+if [[ "${USAGE}" -gt "${URGENT_VALUE}" ]]; then
+    exit 33
+fi

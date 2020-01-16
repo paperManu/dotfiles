@@ -18,7 +18,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 9
-font pango:monospace,FontAwesome 9
+font pango:Hack,FontAwesome 8.5
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -147,10 +147,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 workspace "0:Vim" output HDMI-0
 workspace "1:Code" output HDMI-0
-workspace "2:Net" output DP-5
-workspace "3:Chat" output DP-5
-workspace "4:Media" output DP-5
-workspace "5:Misc" output DP-5
+workspace "2:Net" output DP-2
+workspace "3:Chat" output DP-2
+workspace "4:Media" output DP-2
+workspace "5:Misc" output DP-2
 
 #
 # Some windows are floating by default
