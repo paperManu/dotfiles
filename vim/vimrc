@@ -29,6 +29,9 @@ let mapleader=","
 " Activate the man pages using :Man
 runtime ftplugin/man.vim
 
+" Force some syntax highlight
+au BufRead,BufNewFile *.md.html set set filetype=markdown
+
 "-------------"
 " Folding settings
 set foldmethod=syntax
@@ -252,8 +255,7 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 
 "-------------"
 " vimwiki
-let g:vimwiki_list = [{'path': '~/ownCloud/vimwiki',
-                     \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/ownCloud/vimwiki'}]
 
 "-------------"
 " Some project-specific configuration
