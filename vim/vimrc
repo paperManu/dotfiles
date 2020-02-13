@@ -2,7 +2,7 @@ syntax on
 set nocompatible
 set laststatus=2
 set linebreak
-set number
+set nonumber
 set expandtab
 set tabstop=4
 set guioptions=t
