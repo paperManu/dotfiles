@@ -48,48 +48,6 @@ instance=6077243
 command=${HOME}/.config/i3/other-blocks/weather
 interval=300
 
-[bandwidth]
-instance=eno1;in
-label=
-interval=1
-min_width= 1024Mb
-color=#dddddd
-
-[bandwidth]
-instance=eno1;out
-label=
-interval=1
-min_width= 1024Mb
-color=#dddddd
-
-[bandwidth]
-instance=enp10s0;in
-label=
-interval=1
-min_width= 1024Mb
-color=#dddddd
-
-[bandwidth]
-instance=enp10s0;out
-label=
-interval=1
-min_width= 1024Mb
-color=#dddddd
-
-[bandwidth]
-instance=wlp2s0;in
-label=
-interval=1
-min_width= 1024Mb
-color=#dddddd
-
-[bandwidth]
-instance=wlp2s0;out
-label=
-interval=1
-min_width= 1024Mb
-color=#dddddd
-
 [network]
 label=
 instance=wlp2s0
@@ -99,7 +57,7 @@ color=#dddddd
 
 [bandwidth]
 instance=
-label=
+label=
 interval=1
 min_width= 1024Mb
 color=#dddddd
