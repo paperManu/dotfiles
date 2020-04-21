@@ -255,7 +255,7 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 
 "-------------"
 " vimwiki
-let g:vimwiki_list = [{'path': '~/ownCloud/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/Sync/vimwiki'}]
 
 "-------------"
 " Some project-specific configuration
