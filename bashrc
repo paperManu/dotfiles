@@ -152,4 +152,4 @@ HEAPCHECK=normal LD_PRELOAD="/usr/lib/libtcmalloc.so.4" $@
 alias rmake='make 2>&1 >/dev/null | tac | egrep --color "\b(error)\b|$"'
 
 # Timewarrior
-export TIMEWARRIORDB=~/ownCloud/tasks/timewarrior
+export TIMEWARRIORDB=~/Sync/tasks/timewarrior
