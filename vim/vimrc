@@ -16,6 +16,7 @@ set undofile
 set undodir=/home/manu/.vimundo/
 set scrolloff=5
 set display+=lastline
+set virtualedit=block
 ino jj <Esc> 
 
 let mapleader=","
