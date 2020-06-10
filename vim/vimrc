@@ -10,7 +10,7 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Hack\ 8.5
+set guifont=Hack\ 10.5
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
@@ -31,7 +31,7 @@ let mapleader=","
 runtime ftplugin/man.vim
 
 " Force some syntax highlight
-au BufRead,BufNewFile *.md.html set set filetype=markdown
+au BufRead,BufNewFile *.md.html set filetype=markdown
 
 "-------------"
 " Folding settings
@@ -83,6 +83,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'Konfekt/FastFold'
 Plugin 'vimwiki/vimwiki'
 Plugin 'kyuhi/vim-emoji-complete'
+Plugin 'vim-scripts/DrawIt'
+Plugin 'metakirby5/codi.vim'
 
 filetype plugin on
 
@@ -256,7 +258,11 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 
 "-------------"
 " vimwiki
-let g:vimwiki_list = [{'path': '~/Sync/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
+                     \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'}}]
+let g:vimwiki_folding = 'list'
+let g:vimwiki_global_ext = 0
+au FileType vimwiki setlocal shiftwidth=2 tabstop=2
 
 "-------------"
 " Some project-specific configuration

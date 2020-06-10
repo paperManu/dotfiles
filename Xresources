@@ -7,3 +7,9 @@ rofi.color-window: #303030, #393939, #eeeeee
 rofi.color-normal: #303030, #ffffff, #474747, #0083a4, #ffffff
 rofi.color-active: #303030, #0083a4, #393939, #0083a4, #ffffff
 rofi.color-urgent: #303030, #f3843d, #393939, #0083a4, #ffc39c
+
+! ------------------------
+! HiDpi
+! ------------------------
+Xcursor.size: 24
+Xft.dpi: 96

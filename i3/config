@@ -215,9 +215,10 @@ client.urgent           #FF5E00 #FF5E00 #fdf6e3 #FF5E00
 
 set $wallpaper ~/.config/i3/wallpaper.jpg
 
+for_window [class=".*"] border pixel 3
 new_window normal 1
 new_float normal
-hide_edge_borders both
+# hide_edge_borders both
 focus_follows_mouse no
 mouse_warping none
 workspace_auto_back_and_forth yes
@@ -272,6 +273,8 @@ exec --no-startup-id "setxkbmap -layout us,fr -option ctrl:nocaps -option compos
 exec --no-startup-id "xset r rate 250 40"
 # For keyboard layout handling
 exec --no-startup-id "kbdd"
+# Xresources
+exec --no-startup-id xrdb ~/.Xresources
 # Wallpaper
 exec_always "feh --bg-scale $wallpaper"
 # Pulse Audio
@@ -280,8 +283,6 @@ exec_always "feh --bg-scale $wallpaper"
 exec --no-startup-id "devmon --no-gui"
 # Network manager
 exec --no-startup-id "nm-applet"
-# Owncloud
-# exec --no-startup-id "owncloud"
 # Syncthing
 exec_always --no-startup-id "syncthing-gtk -m"
 # Compton
