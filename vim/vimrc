@@ -21,12 +21,6 @@ ino jj <Esc>
 
 let mapleader=","
 
-" set wildignore+=*.a,*.o
-" set wildignore+=*.png,*.tga,*.tif,*.jpg
-" set wildignore+=*.blend*
-" set wildignore+=*.git
-" set wildignore+=*.swp,*.tmp
-
 " Activate the man pages using :Man
 runtime ftplugin/man.vim
 
@@ -51,8 +45,9 @@ Plugin 'gmarik/vundle'
 Plugin 'Shougo/vimproc.vim'
 
 " Completion
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'osyo-manga/vim-marching'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
 
 " Git stuff
 Plugin 'tpope/vim-fugitive'
@@ -65,11 +60,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 
 " Usage
-" Plugin 'xolox/vim-session'
 Plugin 'vim-scripts/a.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
-" Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-vinegar'
 
 " Code highlight / format
@@ -79,10 +72,8 @@ Plugin 'w0rp/ale'
 " Plugin 'soramugi/auto-ctags.vim'
 
 " Miscellaneous
-Plugin 'xolox/vim-misc'
 Plugin 'Konfekt/FastFold'
 Plugin 'vimwiki/vimwiki'
-Plugin 'kyuhi/vim-emoji-complete'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'metakirby5/codi.vim'
 
@@ -90,7 +81,6 @@ filetype plugin on
 
 "-------------"
 " Shortcuts
-nnoremap <F5> :NERDTreeFocus<CR>
 nnoremap <F6> :UndotreeToggle \| UndotreeFocus<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -108,12 +98,6 @@ command -nargs=1 Toilet read !toilet --font future "<args>"
 " Theme
 set background=dark
 colorscheme solarized
-
-"-------------"
-" Vim-session
-" let g:session_autosave = 'no'
-" let g:session_autoload = 'no'
-" set sessionoptions-=buffers
 
 "-------------"
 " Latex related configuration
@@ -149,7 +133,7 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 let g:auto_ctags = 1
 let g:auto_ctags_search_recursively = 1
 let g:auto_ctags_directory_list = ['.git']
-let g:auto_ctags_tags_name = 'tags'
+let g:auto_ctags_tags_name = '.git/tags'
 
 "-------------"
 " a.vim
@@ -181,32 +165,8 @@ let g:clang_format#style_options = {
 autocmd FileType c,cpp ClangFormatAutoDisable
 
 "-------------"
-" neocomplete
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#disable_auto_complete = 0
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 4
-
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 "-------------"
 " ale
@@ -221,27 +181,6 @@ let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', '
 let g:ale_cpp_clang_options = '-std=c++17'
 let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_cpp_cppcheck_options = '--enable=style'
-
-"-------------"
-" vim-marching
-let g:marching_clang_command = "clang"
-let g:marching#clang_command#options = {
-\     "cpp" : "-std=gnu++17"
-\ }
-let g:marching_include_paths = [
-\ "/usr/include",
-\ "/usr/local/include"
-\]
-let g:marching_enable_neocomplete = 1
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-
-let g:neocomplete#force_omni_input_patterns.cpp = ''
-"	\ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
-set updatetime=200
 
 "-------------"
 " FastFold
