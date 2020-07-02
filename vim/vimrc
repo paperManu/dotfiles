@@ -69,7 +69,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'w0rp/ale'
-" Plugin 'soramugi/auto-ctags.vim'
+Plugin 'soramugi/auto-ctags.vim'
 
 " Miscellaneous
 Plugin 'Konfekt/FastFold'
@@ -122,7 +122,7 @@ endif
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=0
-set tags^=./.git/tags;
+set tags=./tags;$HOME
 
 " Open definition in another split (horizontal or vertical)
 map <C-\> :split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -130,10 +130,10 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "-------------"
 " auto-ctags.vim
-let g:auto_ctags = 1
+let g:auto_ctags = 0
 let g:auto_ctags_search_recursively = 1
 let g:auto_ctags_directory_list = ['.git']
-let g:auto_ctags_tags_name = '.git/tags'
+let g:auto_ctags_tags_name = 'tags'
 
 "-------------"
 " a.vim
@@ -168,6 +168,8 @@ autocmd FileType c,cpp ClangFormatAutoDisable
 " deoplete
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+autocmd FileType vimwiki call deoplete#custom#buffer_option('auto_complete', v:false)
+autocmd FileType latex call deoplete#custom#buffer_option('auto_complete', v:false)
 
 "-------------"
 " ale
