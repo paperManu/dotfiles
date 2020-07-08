@@ -9,10 +9,9 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 sudo apt -y install git cppcheck arc-theme cifs-utils \
     byobu clang-format exuberant-ctags python3-pip \
     openvpn network-manager-openvpn-gnome resolvconf \
-    zsh lx-appearance owncloud-client timewarrior exuberant-ctags \
-    pynvim
+    zsh lxappearance owncloud-client timewarrior exuberant-ctags
 
-sudo pip3 install flake8 autopep8 mypy
+sudo pip3 install flake8 autopep8 mypy pynvim
 
 git submodule update --init --recursive
 sudo ln -s $(pwd)/scripts/backup.sh /usr/local/bin/backup.sh
@@ -33,10 +32,11 @@ fi
 if [[ ! -d ${HOME}/.zprezto ]] ; then
     ln -s ${source_directory}/zprezto ${HOME}/.zprezto
     cd ${HOME}/.zprezto
-    setopt EXTENDED_GLOB
-    for rcfile in "${$HOME}"/.zprezto/runcoms/^README.md(.N); do
-      ln -s "$rcfile" "${$HOME}/.${rcfile:t}"
+    pushd runcoms
+    for rcfile in $(ls z*); do
+      ln -s "$(pwd)/${rcfile}" "${HOME}/.${rcfile}"
     done
+    popd
     cd ${source_directory}
     chsh -s /bin/zsh
 else
@@ -68,6 +68,21 @@ if [ ! -d ${HOME}/.vim ] ; then
     ln -s ${source_directory}/vim ${HOME}/.vim
 else
     echo "${HOME}/.vim : this directory already exists"
+fi
+
+#
+# tmux
+#
+if [ ! -d ${HOME}/.tmux ] ; then
+    ln -s ${source_directory}/tmux ${HOME}/.tmux
+else
+    echo "${HOME}/.tmux : this directory already exists"
+fi
+
+if [ ! -f ${HOME}/.tmux.conf ] ; then
+    ln -s ${source_directory}/tmux.conf ${HOME}/.tmux.conf
+else
+    echo "${HOME}/.tmux.conf : this file already exists"
 fi
 
 # ┏━┓┏━┓╻ ╻┏━╸┏━┓╻  ╻┏┓╻┏━╸   ┏━╸┏━┓┏┓╻╺┳╸┏━┓
