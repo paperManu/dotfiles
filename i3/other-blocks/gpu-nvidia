@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if ! hash radeontop 2> /dev/null; then
-    echo ""
-    exit
-fi
-
 if [[ $(nvidia-smi | grep "Driver Version") == "" ]]; then
     echo ""
     exit

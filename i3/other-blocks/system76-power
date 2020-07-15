@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if ! hash system76-power 2> /dev/null; then
+    echo ""
+    exit
+fi
+
+S76PROFILE=$(system76-power profile | egrep -o 'Power Profile: [a-zA-Z]+' | cut -d ':' -f 2)
+PROFILE=$(echo ${S76PROFILE##*( )})
+
+if [[ "$BLOCK_BUTTON" == "3" ]]; then
+    if [[ "${PROFILE}" == "Battery" ]]; then
+        system76-power profile performance
+        system76-power graphics nvidia
+    else
+        system76-power profile battery
+        system76-power graphics compute
+    fi
+fi
+
+echo "${PROFILE}"
