@@ -177,7 +177,8 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
-\   'python': ['flake8', 'mypy']
+\   'python': ['flake8', 'mypy'],
+\   'javascript': ['eslint']
 \}
 let g:ale_python_flake8_options = '--ignore=E501,E225'
 let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']

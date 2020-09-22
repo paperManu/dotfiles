@@ -11,7 +11,7 @@ sudo apt -y install git cppcheck arc-theme cifs-utils \
     openvpn network-manager-openvpn-gnome resolvconf \
     zsh lxappearance owncloud-client timewarrior exuberant-ctags
 
-sudo pip3 install flake8 autopep8 mypy pynvim
+sudo pip3 install flake8 autopep8 mypy pynvim eslint
 
 git submodule update --init --recursive
 sudo ln -s $(pwd)/scripts/backup.sh /usr/local/bin/backup.sh

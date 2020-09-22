@@ -10,11 +10,9 @@ PROFILE=$(echo ${S76PROFILE##*( )})
 
 if [[ "$BLOCK_BUTTON" == "3" ]]; then
     if [[ "${PROFILE}" == "Battery" ]]; then
-        system76-power profile performance
-        system76-power graphics nvidia
+        system76-power profile balanced
     else
         system76-power profile battery
-        system76-power graphics compute
     fi
 fi
 
