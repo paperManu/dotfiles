@@ -28,6 +28,10 @@ runtime ftplugin/man.vim
 au BufRead,BufNewFile *.md.html set filetype=markdown
 
 "-------------"
+" Javascript
+autocmd Filetype javascript set tabstop=4
+
+"-------------"
 " Folding settings
 set foldmethod=syntax
 set foldnestmax=10
@@ -64,6 +68,7 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-unimpaired'
 
 " Code highlight / format
 Plugin 'rhysd/vim-clang-format'
@@ -74,8 +79,6 @@ Plugin 'soramugi/auto-ctags.vim'
 " Miscellaneous
 Plugin 'Konfekt/FastFold'
 Plugin 'vimwiki/vimwiki'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'metakirby5/codi.vim'
 
 filetype plugin on
 
@@ -203,7 +206,7 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
                      \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'}}]
-let g:vimwiki_folding = 'list'
+let g:vimwiki_folding = ''
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
 
@@ -239,3 +242,16 @@ function! CloseHiddenBuffers()
     endfor
 endfun
 command -nargs=? CloseHiddenbuffers call CloseHiddenBuffers()
+
+" Change font size
+function! SmallFont()
+    set guifont=Hack\ 9.0
+endfun
+command -nargs=? SmallFont call SmallFont()
+noremap <leader><C-S> :SmallFont<cr>
+
+function! BigFont()
+    set guifont=Hack\ 10.5
+endfun
+command -nargs=? BigFont call BigFont()
+noremap <leader><C-B> :BigFont<cr>
