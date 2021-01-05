@@ -75,6 +75,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'w0rp/ale'
 Plugin 'soramugi/auto-ctags.vim'
+Plugin 'cespare/vim-toml'
 
 " Miscellaneous
 Plugin 'Konfekt/FastFold'
@@ -181,13 +182,15 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
 \   'python': ['flake8', 'mypy'],
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
+\   'rust': ['cargo', 'rls']
 \}
 let g:ale_python_flake8_options = '--ignore=E501,E225'
 let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']
 let g:ale_cpp_clang_options = '-std=c++17'
 let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_cpp_cppcheck_options = '--enable=style'
+let g:ale_rust_rls_toolchain = 'stable'
 
 "-------------"
 " FastFold
