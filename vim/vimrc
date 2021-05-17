@@ -69,6 +69,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 " Code highlight / format
 Plugin 'rhysd/vim-clang-format'
@@ -94,9 +96,6 @@ nmap sn :lnext<CR>
 nmap sp :lprevious<CR>
 nmap cn :cn<CR>
 nmap cp :cp<CR>
-
-" Commands
-command -nargs=1 Toilet read !toilet --font future "<args>"
 
 "-------------"
 " Theme
@@ -126,7 +125,7 @@ endif
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autoclose=0
-set tags=./tags;$HOME
+set tags^=.git/tags;tags;~
 
 " Open definition in another split (horizontal or vertical)
 map <C-\> :split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -138,6 +137,7 @@ let g:auto_ctags = 0
 let g:auto_ctags_search_recursively = 1
 let g:auto_ctags_directory_list = ['.git']
 let g:auto_ctags_tags_name = 'tags'
+let g:auto_ctags_tags_args = ['--tag-relative=yes', '--recurse=yes', '--sort=yes', '--append=yes']
 
 "-------------"
 " a.vim
@@ -209,7 +209,7 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
                      \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'}}]
-let g:vimwiki_folding = ''
+let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
 
@@ -222,6 +222,8 @@ let $PYTHONPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/E
 "-------------"
 " A few more commands
 "-------------"
+command -nargs=1 Toilet read !toilet --font future "<args>"
+
 function! CloseHiddenBuffers()
     " Tableau pour memoriser la visibilite des buffers                                                                                      
     let visible = {}
