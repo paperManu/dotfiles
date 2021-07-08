@@ -10,13 +10,14 @@ set autochdir
 set autoindent
 set nowrap
 set hlsearch
-set guifont=Hack\ 10.5
+set guifont=Hack\ 9.5
 set wildmenu
 set undofile
 set undodir=/home/manu/.vimundo/
 set scrolloff=5
 set display+=lastline
 set virtualedit=block
+set mouse=a
 ino jj <Esc> 
 
 let mapleader=","
