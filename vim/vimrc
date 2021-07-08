@@ -116,11 +116,7 @@ let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#wordcount#filetypes = ['tex', 'md']
-if has('gui_running')
-    let g:airline_theme='solarized'
-else
-    let g:airline_theme='dark'
-endif
+let g:airline_theme='solarized'
 
 "-------------"
 " Tagbar
