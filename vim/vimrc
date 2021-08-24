@@ -17,7 +17,7 @@ set undodir=/home/manu/.vimundo/
 set scrolloff=5
 set display+=lastline
 set virtualedit=block
-set mouse=a
+set mouse=a " Mouse scroll
 ino jj <Esc> 
 
 let mapleader=","
@@ -107,12 +107,15 @@ colorscheme solarized
 " Latex related configuration
 set grepprg=grep\ -nH\ $*i
 let g:tex_flavor='latex'
+let g:tex_conceal=''
 
 "-------------"
 " Airline
 "let g:airline_section_warning=''
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#wordcount#filetypes = ['tex', 'md']
