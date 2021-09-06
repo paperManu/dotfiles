@@ -71,6 +71,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'djoshea/vim-autoread'
 
 " Code highlight / format
 Plugin 'rhysd/vim-clang-format'
