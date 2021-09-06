@@ -60,9 +60,8 @@ Plugin 'junegunn/gv.vim'
 
 " Theme
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
+Plugin 'itchyny/lightline.vim'
 
 " Usage
 Plugin 'vim-scripts/a.vim'
@@ -104,22 +103,16 @@ set background=dark
 colorscheme solarized
 
 "-------------"
+" Lightline
+let g:lightline = {
+\ 'colorscheme': 'solarized',
+\ }
+
+"-------------"
 " Latex related configuration
 set grepprg=grep\ -nH\ $*i
 let g:tex_flavor='latex'
 let g:tex_conceal=''
-
-"-------------"
-" Airline
-"let g:airline_section_warning=''
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tagbar#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#wordcount#enabled = 1
-let g:airline#extensions#wordcount#filetypes = ['tex', 'md']
-let g:airline_theme='solarized'
 
 "-------------"
 " Tagbar
