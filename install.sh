@@ -9,7 +9,8 @@ source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 sudo apt -y install git cppcheck arc-theme cifs-utils \
     byobu clang-format exuberant-ctags python3-pip \
     openvpn network-manager-openvpn-gnome resolvconf \
-    zsh lxappearance owncloud-client timewarrior exuberant-ctags
+    zsh lxappearance owncloud-client timewarrior exuberant-ctags \
+    kitty
 
 sudo pip3 install flake8 autopep8 mypy pynvim eslint
 

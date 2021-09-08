@@ -153,3 +153,4 @@ alias rmake='make 2>&1 >/dev/null | tac | egrep --color "\b(error)\b|$"'
 
 # Timewarrior
 export TIMEWARRIORDB=~/Sync/tasks/timewarrior
+source "$HOME/.cargo/env"
