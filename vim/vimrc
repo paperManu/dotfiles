@@ -62,7 +62,6 @@ Plugin 'junegunn/gv.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'itchyny/lightline.vim'
-Plugin 'ap/vim-buftabline'
 
 " Usage
 Plugin 'vim-scripts/a.vim'
