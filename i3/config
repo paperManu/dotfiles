@@ -34,6 +34,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec "if hash nemo; then nemo; else nautilus; fi"
 bindsym $mod+Ctrl+Return exec "kitty vim"
+bindsym $mod+Ctrl+P exec "kitty ipython3"
 
 # kill focused window
 bindsym $mod+Shift+q kill
