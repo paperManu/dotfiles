@@ -1,0 +1,12 @@
+open_with unzip
+search home
+help
+search 
+delete
+open_with 
+rename 
+shell rename s/Disc 1 - //g %s
+shell rename 's/Disct 1 - //g' %s
+shell rename 's/Disc 1 - //g' *.flac
+shell  %s
+shell 
