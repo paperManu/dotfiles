@@ -32,7 +32,8 @@ floating_modifier $mod
 
 # start various stuff
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec "if hash nemo; then nemo; else nautilus; fi"
+# bindsym $mod+Shift+Return exec "if hash nemo; then nemo; else nautilus; fi"
+bindsym $mod+Shift+Return exec "kitty ranger"
 bindsym $mod+Ctrl+Return exec "kitty vim"
 bindsym $mod+Ctrl+P exec "kitty ipython3"
 

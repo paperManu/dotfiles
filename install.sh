@@ -10,7 +10,7 @@ sudo apt -y install git cppcheck arc-theme cifs-utils \
     byobu clang-format exuberant-ctags python3-pip \
     openvpn network-manager-openvpn-gnome resolvconf \
     zsh lxappearance owncloud-client timewarrior exuberant-ctags \
-    kitty
+    kitty ranger
 
 sudo pip3 install flake8 autopep8 mypy pynvim eslint
 
@@ -110,6 +110,16 @@ if [ ! -f ${HOME}/.Xresources ] ; then
     ln -s ${source_directory}/Xresources ${HOME}/.Xresources
 else
     echo "${HOME}/.Xresources : this file alreay exists"
+fi
+
+
+# ┏━┓┏━┓┏┓╻┏━╸┏━╸┏━┓
+# ┣┳┛┣━┫┃┗┫┃╺┓┣╸ ┣┳┛
+# ╹┗╸╹ ╹╹ ╹┗━┛┗━╸╹┗╸
+if [ ! -f ${HOME}/.config/ranger ] ; then
+    ln -s ${source_directory}/ranger ${HOME}/.config/ranger
+else
+    echo "${HOME}/.config/ranger : this file alreay exists"
 fi
 
 #  ┏━┓┏━┓┏━┓┏━╸╻╻  ┏━╸
