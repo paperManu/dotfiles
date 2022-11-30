@@ -166,8 +166,6 @@ for_window [class="Splash.*"] floating enable
 for_window [title="Panda.*"] floating enable
 assign [class="Spotify.*"] "4:Media"
 assign [class="Steam.*"] "4:Media"
-assign [class="Blender.*"] "5:Misc"
-assign [title="Render Pipeline.*"] "5:Misc"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
