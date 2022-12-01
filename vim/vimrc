@@ -16,7 +16,6 @@ set undofile
 set undodir=/home/manu/.vimundo/
 set scrolloff=5
 set display+=lastline
-set virtualedit=block
 set mouse=a " Mouse scroll
 ino jj <Esc> 
 
@@ -83,6 +82,9 @@ Plugin 'cespare/vim-toml'
 " Miscellaneous
 Plugin 'Konfekt/FastFold'
 Plugin 'vimwiki/vimwiki'
+Plugin 'itchyny/calendar.vim'
+Plugin 'rhysd/vim-grammarous'
+
 
 filetype plugin on
 
@@ -99,6 +101,8 @@ nmap sn :lnext<CR>
 nmap sp :lprevious<CR>
 nmap cn :cn<CR>
 nmap cp :cp<CR>
+" nmap <C-b>n :bnext<CR>
+" nmap <C-b>p :bprev<CR>
 
 "-------------"
 " Theme
@@ -208,6 +212,16 @@ let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
 let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
+
+"------------"
+" Calendar
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+"-------------"
+" Limelight
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_paragraph_span = 2
 
 "-------------"
 " Some project-specific configuration

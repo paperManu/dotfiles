@@ -10,9 +10,10 @@ sudo apt -y install git cppcheck arc-theme cifs-utils \
     byobu clang-format exuberant-ctags python3-pip \
     openvpn network-manager-openvpn-gnome resolvconf \
     zsh lxappearance owncloud-client timewarrior exuberant-ctags \
-    kitty ranger
+    kitty rangerccache weechat-curses thunderbird syncthing git \
+    git-lfs
 
-sudo pip3 install flake8 autopep8 mypy pynvim eslint
+sudo pip3 install flake8 autopep8 mypy pynvim
 
 git submodule update --init --recursive
 sudo ln -s $(pwd)/scripts/backup.sh /usr/local/bin/backup.sh
