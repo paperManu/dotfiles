@@ -11,7 +11,7 @@ sudo apt -y install git cppcheck arc-theme cifs-utils \
     openvpn network-manager-openvpn-gnome resolvconf \
     zsh lxappearance owncloud-client timewarrior exuberant-ctags \
     kitty rangerccache weechat-curses thunderbird syncthing git \
-    git-lfs
+    git-lfs nextcloud-desktop
 
 sudo pip3 install flake8 autopep8 mypy pynvim
 
