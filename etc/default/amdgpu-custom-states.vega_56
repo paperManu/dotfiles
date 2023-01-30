@@ -1,0 +1,20 @@
+OD_SCLK:
+0:        852Mhz        800mV
+1:        860Mhz        825mV
+2:        865Mhz        825mV
+3:        870Mhz        825mV
+4:        875Mhz        825mV
+5:        880Mhz        825mV
+6:        885Mhz        825mV
+7:        1000Mhz        825mV
+OD_MCLK:
+0:        167Mhz        800mV
+1:        500Mhz        800mV
+2:        850Mhz        850mV
+3:        900Mhz        850mV
+OD_RANGE:
+SCLK:     852MHz       2400MHz
+MCLK:     167MHz       1500MHz
+VDDC:     800mV        1200mV
+FORCE_PERF_LEVEL: auto
+FORCE_POWER_CAP: 120000000
