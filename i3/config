@@ -111,7 +111,7 @@ set $workspace2 2:Net
 set $workspace3 3:Chat
 set $workspace4 4:Media
 set $workspace5 5:Misc
-set $workspace6 6:6
+set $workspace6 6:Taf
 set $workspace7 7:7
 set $workspace8 8:8
 set $workspace9 9:9
@@ -296,6 +296,8 @@ exec --no-startup-id "devmon --no-gui"
 exec --no-startup-id "nm-applet"
 # Syncthing
 exec_always --no-startup-id "syncthing-gtk -m"
+# Nextcloud
+exec_always --no-startup-id "nextcloud --background"
 # Compton
 #exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Disable Nautilus and Nemo desktop
