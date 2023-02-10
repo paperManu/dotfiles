@@ -78,11 +78,16 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'w0rp/ale'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'Konfekt/FastFold'
+
+" Task management
+Plugin 'vimwiki/vimwiki'
+Plugin 'tools-life/taskwiki'
+Plugin 'powerman/vim-plugin-AnsiEsc'
+Plugin 'blindFS/vim-taskwarrior'
+Plugin 'itchyny/calendar.vim'
 
 " Miscellaneous
-Plugin 'Konfekt/FastFold'
-Plugin 'vimwiki/vimwiki'
-Plugin 'itchyny/calendar.vim'
 Plugin 'rhysd/vim-grammarous'
 
 
@@ -215,8 +220,8 @@ au FileType vimwiki setlocal shiftwidth=2 tabstop=2
 
 "------------"
 " Calendar
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
+" let g:calendar_google_calendar = 1
+" let g:calendar_google_task = 1
 
 "-------------"
 " Limelight

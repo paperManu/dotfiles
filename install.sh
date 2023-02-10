@@ -135,3 +135,13 @@ ln -s ${source_directory}/profile ${HOME}/.profile
 # ┗━┛╺┻┛┗━┛   ╺┻┛╹ ╹┗━┛╹ ╹┗━┛┗━┛╹ ╹╹┗╸╺┻┛
 rm ${HOME}/.gdbinit
 ln -s ${source_directory}/gdb-dashboard/.gdbinit ${HOME}/.gdbinit
+
+
+# ╺┳╸╻┏┳┓┏━╸╻ ╻┏━┓┏━┓┏━┓╻┏━┓┏━┓
+#  ┃ ┃┃┃┃┣╸ ┃╻┃┣━┫┣┳┛┣┳┛┃┃ ┃┣┳┛
+#  ╹ ╹╹ ╹┗━╸┗┻┛╹ ╹╹┗╸╹┗╸╹┗━┛╹┗╸
+sudo apt install taskwarrior
+sudo pip3 install tasklib
+
+rm ${HOME}/.taskrc
+ln -s ${source_directory}/taskwarrior/taskrc ${HOME}/.taskrc
