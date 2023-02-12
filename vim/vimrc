@@ -230,6 +230,11 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_paragraph_span = 2
 
 "-------------"
+" Limelight
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_paragraph_span = 2
+
+"-------------"
 " Some project-specific configuration
 " ------------"
 let $MYPYPATH.="/home/manu/src/EditionInSitu/extlib/py-satlib:/home/manu/src/EditionInSitu/extlib/py-satmath:/home/manu/src/EditionInSitu/extlib/py-satnet:/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages"
