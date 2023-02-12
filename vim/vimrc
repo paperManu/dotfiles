@@ -102,8 +102,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-m> :bprev<CR>
-nmap sn :lnext<CR>
-nmap sp :lprevious<CR>
+nmap ln :lnext<CR>
+nmap lp :lprevious<CR>
 nmap cn :cn<CR>
 nmap cp :cp<CR>
 " nmap <C-b>n :bnext<CR>
@@ -213,7 +213,8 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 "-------------"
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
-                     \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'}}]
+                     \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'},
+                     \ 'auto_tags': 1}]
 let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2

@@ -48,6 +48,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec "rofi -font 'Hack 9' -combi-modi run,drun -show combi -modi combi -disable-history -separator-style solid -opacity 95"
 bindsym $mod+Shift+Tab exec "rofi -font 'Hack 9' -modi window -show window -separator-style solid -opacity 95"
+bindsym $mod+t exec "rofi -modi tasks:rofi-taskwarrior -show tasks"
 
 # change focus
 bindsym $mod+h focus left
