@@ -18,6 +18,13 @@ sudo pip3 install flake8 autopep8 mypy pynvim
 git submodule update --init --recursive
 sudo ln -s $(pwd)/scripts/backup.sh /usr/local/bin/backup.sh
 
+# ┏━┓╻ ╻┏━┓╺┳╸
+# ┣┳┛┃ ┃┗━┓ ┃ 
+# ╹┗╸┗━┛┗━┛ ╹ 
+if [ ! -x "$(command -v rustc)" ]; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    rustup update
+fi
 
 # ┏┓ ┏━┓┏━┓╻ ╻
 # ┣┻┓┣━┫┗━┓┣━┫
@@ -145,3 +152,9 @@ sudo pip3 install tasklib
 
 rm ${HOME}/.taskrc
 ln -s ${source_directory}/taskwarrior/taskrc ${HOME}/.taskrc
+
+if ! [ -x "$(command -v rofi-taskwarrior)" ]; then
+    cd /tmp
+    git clone https://github.com/nyarly/rofi-taskwarrior.git
+    cargo install --path rofi-taskwarrior
+fi
