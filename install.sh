@@ -11,9 +11,9 @@ sudo apt -y install git cppcheck arc-theme cifs-utils \
     openvpn network-manager-openvpn-gnome resolvconf \
     zsh lxappearance owncloud-client timewarrior exuberant-ctags \
     kitty rangerccache weechat-curses thunderbird syncthing git \
-    git-lfs nextcloud-desktop
+    git-lfs nextcloud-desktop taskwarrior
 
-sudo pip3 install flake8 autopep8 mypy pynvim
+sudo pip3 install flake8 autopep8 mypy pynvim tasklib
 
 git submodule update --init --recursive
 sudo ln -s $(pwd)/scripts/backup.sh /usr/local/bin/backup.sh
@@ -25,6 +25,8 @@ if [ ! -x "$(command -v rustc)" ]; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     rustup update
 fi
+
+cargo install ripgrep rofi-taskwarrior
 
 # ┏┓ ┏━┓┏━┓╻ ╻
 # ┣┻┓┣━┫┗━┓┣━┫
@@ -147,9 +149,5 @@ ln -s ${source_directory}/gdb-dashboard/.gdbinit ${HOME}/.gdbinit
 # ╺┳╸╻┏┳┓┏━╸╻ ╻┏━┓┏━┓┏━┓╻┏━┓┏━┓
 #  ┃ ┃┃┃┃┣╸ ┃╻┃┣━┫┣┳┛┣┳┛┃┃ ┃┣┳┛
 #  ╹ ╹╹ ╹┗━╸┗┻┛╹ ╹╹┗╸╹┗╸╹┗━┛╹┗╸
-sudo apt install taskwarrior
-sudo pip3 install tasklib
-cargo install rofi-taskwarrior
-
 rm ${HOME}/.taskrc
 ln -s ${source_directory}/taskwarrior/taskrc ${HOME}/.taskrc

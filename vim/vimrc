@@ -71,6 +71,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'djoshea/vim-autoread'
+Plugin 'jremmen/vim-ripgrep'
 
 " Code highlight / format
 Plugin 'rhysd/vim-clang-format'
@@ -102,12 +103,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-m> :bprev<CR>
-nmap ln :lnext<CR>
-nmap lp :lprevious<CR>
-nmap cn :cn<CR>
-nmap cp :cp<CR>
-" nmap <C-b>n :bnext<CR>
-" nmap <C-b>p :bprev<CR>
 
 "-------------"
 " Theme
@@ -214,7 +209,8 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
                      \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'},
-                     \ 'auto_tags': 1}]
+                     \ 'auto_tags': 1,
+                     \ 'auto_diary_index': 1}]
 let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
