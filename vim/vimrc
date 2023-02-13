@@ -85,7 +85,7 @@ Plugin 'Konfekt/FastFold'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tools-life/taskwiki'
 Plugin 'powerman/vim-plugin-AnsiEsc'
-Plugin 'blindFS/vim-taskwarrior'
+Plugin 'linuxcaffe/taskwarrior.vim'
 Plugin 'itchyny/calendar.vim'
 
 " Miscellaneous
@@ -214,6 +214,10 @@ let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
 let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
+
+"------------"
+" taskwiki
+let g:taskwiki_taskrc_location="~/.taskrc"
 
 "------------"
 " Calendar
