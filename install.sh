@@ -149,12 +149,7 @@ ln -s ${source_directory}/gdb-dashboard/.gdbinit ${HOME}/.gdbinit
 #  ╹ ╹╹ ╹┗━╸┗┻┛╹ ╹╹┗╸╹┗╸╹┗━┛╹┗╸
 sudo apt install taskwarrior
 sudo pip3 install tasklib
+cargo install rofi-taskwarrior
 
 rm ${HOME}/.taskrc
 ln -s ${source_directory}/taskwarrior/taskrc ${HOME}/.taskrc
-
-if ! [ -x "$(command -v rofi-taskwarrior)" ]; then
-    cd /tmp
-    git clone https://github.com/nyarly/rofi-taskwarrior.git
-    cargo install --path rofi-taskwarrior
-fi
