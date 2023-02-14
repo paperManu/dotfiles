@@ -146,9 +146,10 @@ rm ${HOME}/.gdbinit
 ln -s ${source_directory}/gdb-dashboard/.gdbinit ${HOME}/.gdbinit
 
 
-# ╺┳╸╻┏┳┓┏━╸╻ ╻┏━┓┏━┓┏━┓╻┏━┓┏━┓
-#  ┃ ┃┃┃┃┣╸ ┃╻┃┣━┫┣┳┛┣┳┛┃┃ ┃┣┳┛
-#  ╹ ╹╹ ╹┗━╸┗┻┛╹ ╹╹┗╸╹┗╸╹┗━┛╹┗╸
+
+# ╺┳╸╻┏┳┓┏━╸╻ ╻┏━┓┏━┓┏━┓╻┏━┓┏━┓   ┏┓     ╺┳╸┏━┓┏━┓╻┏ ╻ ╻┏━┓┏━┓┏━┓╻┏━┓┏━┓
+#  ┃ ┃┃┃┃┣╸ ┃╻┃┣━┫┣┳┛┣┳┛┃┃ ┃┣┳┛   ┃╺╋╸    ┃ ┣━┫┗━┓┣┻┓┃╻┃┣━┫┣┳┛┣┳┛┃┃ ┃┣┳┛
+#  ╹ ╹╹ ╹┗━╸┗┻┛╹ ╹╹┗╸╹┗╸╹┗━┛╹┗╸   ┗━┛     ╹ ╹ ╹┗━┛╹ ╹┗┻┛╹ ╹╹┗╸╹┗╸╹┗━┛╹┗╸
 rm ${HOME}/.taskrc
 ln -s ${source_directory}/taskwarrior/taskrc ${HOME}/.taskrc
 
@@ -156,5 +157,12 @@ if [ ! -x "$(command -v rofi-taskwarrior)" ]; then
     cd /tmp/
     git clone https://github.com/nyarly/rofi-taskwarrior.git
     cargo install --path rofi-taskwarrior
+    cd ${source_directory}
+fi
+
+if [ ! -x "$(command -v taskwarrior-tui)" ]; then
+    cd /tmp/
+    git clone https://github.com/kdheepak/taskwarrior-tui/
+    cargo install --path taskwarrior-tui
     cd ${source_directory}
 fi

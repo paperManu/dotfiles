@@ -35,7 +35,8 @@ bindsym $mod+Return exec kitty
 # bindsym $mod+Shift+Return exec "if hash nemo; then nemo; else nautilus; fi"
 bindsym $mod+Shift+Return exec "kitty ranger"
 bindsym $mod+Ctrl+Return exec "kitty vim"
-bindsym $mod+Ctrl+P exec "kitty ipython3"
+bindsym $mod+Ctrl+p exec "kitty ipython3"
+bindsym $mod+Ctrl+t exec "kitty ${HOME}/.cargo/bin/taskwarrior-tui"
 
 # kill focused window
 bindsym $mod+Shift+q kill
