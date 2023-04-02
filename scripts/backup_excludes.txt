@@ -14,8 +14,11 @@ VirtualBox VMs/*
 .local/share/Daedalus/*
 .local/share/Steam/*
 .local/share/Trash/*
+.thunderbird/*
 .PlayOnLinux/*
 .steam/*
+snap/*
+Videos/*
 nohup.out
 
 *.o
