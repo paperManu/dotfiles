@@ -9,10 +9,12 @@ S76PROFILE=$(system76-power profile | egrep -o 'Power Profile: [a-zA-Z]+' | cut 
 PROFILE=$(echo ${S76PROFILE##*( )})
 
 if [[ "$BLOCK_BUTTON" == "3" ]]; then
-    if [[ "${PROFILE}" == "Battery" ]]; then
-        system76-power profile balanced
-    else
+    if [[ "${PROFILE}" == "Balanced" ]]; then
+        system76-power profile performance
+    elif [[ "${PROFILE}" == "Performance" ]]; then
         system76-power profile battery
+    else
+        system76-power profile balanced
     fi
 fi
 
