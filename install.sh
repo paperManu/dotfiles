@@ -166,3 +166,10 @@ if [ ! -x "$(command -v taskwarrior-tui)" ]; then
     cargo install --path taskwarrior-tui
     cd ${source_directory}
 fi
+
+
+# ╺┳┓┏━╸┏━┓╺┳┓┏┓ ┏━╸┏━╸┏━╸
+#  ┃┃┣╸ ┣━┫ ┃┃┣┻┓┣╸ ┣╸ ┣╸ 
+# ╺┻┛┗━╸╹ ╹╺┻┛┗━┛┗━╸┗━╸╹  
+rm -f ${HOME}/.config/deadbeef
+ln -s ${source_directory}/deadbeef ${HOME}/.config/deadbeef
