@@ -5,9 +5,9 @@ target=${1:-"local"}
 PASSWORD_FILE="/home/manu/Apps/rsync_password"
 
 
-# ┏━┓╻ ╻┏━┓┏━╸┏━┓╺┳╸╻ ╻┏━╸┏━┓┏━╸
-# ┗━┓┃ ┃┣━┛┣╸ ┣┳┛ ┃ ┣━┫┣╸ ┣━┛┃  
-# ┗━┛┗━┛╹  ┗━╸╹┗╸ ╹ ╹ ╹┗━╸╹  ┗━╸
+# ┏━┓╻ ╻┏━┓┏━╸┏━┓╺┳╸╻ ╻┏━╸   ┏┓     ┏━┓╻ ╻┏━┓┏━╸┏━┓╺┳╸╻ ╻┏━┓╻┏━┓
+# ┗━┓┃ ┃┣━┛┣╸ ┣┳┛ ┃ ┣━┫┣╸    ┃╺╋╸   ┗━┓┃ ┃┣━┛┣╸ ┣┳┛ ┃ ┣━┫┣━┫┃┣┳┛
+# ┗━┛┗━┛╹  ┗━╸╹┗╸ ╹ ╹ ╹┗━╸   ┗━┛    ┗━┛┗━┛╹  ┗━╸╹┗╸ ╹ ╹ ╹╹ ╹╹╹┗╸
 if [ ${target} = "local" ] ; then
   rsync --archive --one-file-system --human-readable --inplace --numeric-ids --delete --progress --stats \
         --compress-level=1 --delete-excluded --exclude-from '/home/manu/.config/dotfiles/scripts/backup_excludes.txt' --verbose \

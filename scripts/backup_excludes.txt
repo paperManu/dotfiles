@@ -1,4 +1,6 @@
 Apps/nohup.out
+Camera/*
+Documents/VirtualBox VMs/*
 Downloads/*
 Dolphin/*
 Desktop/*
@@ -6,7 +8,7 @@ GOG Games/*
 Photos/*
 These/*
 Music/*
-ownCloud/*
+NextCloud/*
 tmp/*
 dd_backup/*
 VirtualBox VMs/*
@@ -24,3 +26,4 @@ nohup.out
 *.o
 *.lo
 *.la
+*.swp
