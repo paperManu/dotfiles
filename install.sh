@@ -1,17 +1,33 @@
 #!/bin/bash
 
+# Import information regarding the current distribution
+. /etc/os-release
+
 source_directory="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 
 
 # ┏━╸┏━╸┏┓╻┏━╸┏━┓┏━┓╻     ┏━┓╺┳╸╻ ╻┏━╸┏━╸
 # ┃╺┓┣╸ ┃┗┫┣╸ ┣┳┛┣━┫┃     ┗━┓ ┃ ┃ ┃┣╸ ┣╸ 
 # ┗━┛┗━╸╹ ╹┗━╸╹┗╸╹ ╹┗━╸   ┗━┛ ╹ ┗━┛╹  ╹  
-sudo apt -y install git cppcheck arc-theme cifs-utils \
-    byobu clang-format exuberant-ctags python3-pip \
-    openvpn network-manager-openvpn-gnome resolvconf \
-    zsh lxappearance owncloud-client timewarrior exuberant-ctags \
-    kitty rangerccache weechat-curses thunderbird syncthing git \
-    git-lfs nextcloud-desktop taskwarrior
+if [ "${ID}" == "ubuntu" ]; then
+    sudo apt -y install git cppcheck arc-theme cifs-utils \
+        clang-format exuberant-ctags python3-pip \
+        openvpn network-manager-openvpn-gnome resolvconf \
+        zsh lxappearance timewarrior \
+        alacritty ranger ccache weechat-curses thunderbird syncthing \
+        git-lfs nextcloud-desktop taskwarrior tmux pass toilet
+fi
+
+# Fedora
+if [ "${ID}" == "fedora" ]; then
+    sudo dnf -y install git cppcheck arc-theme cifs-utils \
+        clang-tools-extra ctags python3-pip \
+        openvpn network-manager-openvpn-gnome resolvconf \
+        zsh lxappearance timew \
+        alacritty ranger ccache weechat thunderbird syncthing \
+        git-lfs nextcloud-client task tmux xrandr xset pass \
+        deadbeef light waybar toilet
+fi
 
 sudo pip3 install flake8 autopep8 mypy pynvim tasklib
 
@@ -66,6 +82,19 @@ else
     echo "${HOME}/.config/i3 : this directory already exists"
 fi
 
+# ┏━┓╻ ╻┏━┓╻ ╻
+# ┗━┓┃╻┃┣━┫┗┳┛
+# ┗━┛┗┻┛╹ ╹ ╹ 
+
+# ╻ ╻┏━┓╻ ╻┏┓ ┏━┓┏━┓
+# ┃╻┃┣━┫┗┳┛┣┻┓┣━┫┣┳┛
+# ┗┻┛╹ ╹ ╹ ┗━┛╹ ╹╹┗╸
+if [ ! -d ${HOME}/.config/waybar ] ; then
+    ln -s ${source_directory}/waybar ${HOME}/.config/waybar
+else
+    echo "${HOME}/.config/waybar : this directory already exists"
+fi
+
 # ╻ ╻╻┏┳┓
 # ┃┏┛┃┃┃┃
 # ┗┛ ╹╹ ╹
@@ -99,10 +128,10 @@ fi
 # ┏━┓┏━┓╻ ╻┏━╸┏━┓╻  ╻┏┓╻┏━╸   ┏━╸┏━┓┏┓╻╺┳╸┏━┓
 # ┣━┛┃ ┃┃╻┃┣╸ ┣┳┛┃  ┃┃┗┫┣╸    ┣╸ ┃ ┃┃┗┫ ┃ ┗━┓
 # ╹  ┗━┛┗┻┛┗━╸╹┗╸┗━╸╹╹ ╹┗━╸   ╹  ┗━┛╹ ╹ ╹ ┗━┛
-cd /tmp
-git clone https://github.com/powerline/fonts.git
-cd fonts && ./install.sh
-cd ${source_directory}
+# cd /tmp
+# git clone https://github.com/powerline/fonts.git
+# cd fonts && ./install.sh
+# cd ${source_directory}
 
 # ╻ ╻┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻┏━┓┏━┓╻ ╻┏━╸┏━┓
 # ┏╋┛┗━┓┃  ┣┳┛┣╸ ┣╸ ┃┗┫┗━┓┣━┫┃┏┛┣╸ ┣┳┛
