@@ -220,6 +220,10 @@ input "type:keyboard" {
     xkb_options compose:ralt,ctrl:nocaps
 }
 
+input "type:touch" {
+    events disabled
+}
+
 input "type:touchpad" {
     natural_scroll disabled
     dwt enabled
