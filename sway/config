@@ -133,7 +133,9 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 
 # Vim has a special place
+bindsym $mod+grave workspace $workspace0
 bindsym $mod+Escape workspace $workspace0
+bindsym $mod+Shift+grave move container to workspace $workspace0
 bindsym $mod+Shift+Escape move container to workspace $workspace0
 
 # Scratchpad
