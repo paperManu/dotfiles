@@ -45,14 +45,14 @@ elif [ ${target} = "mathilde" ] ; then
 elif [ ${target} = "mathildelinux" ] ; then
   # Backup Mathilde's computer
   DISTANT_PASSWORD_FILE="/tmp/rsync_password"
-  scp ${PASSWORD_FILE} mathilde@192.168.2.103:${DISTANT_PASSWORD_FILE}
-  ssh mathilde@192.168.2.103 rsync --archive --compress --one-file-system --human-readable --inplace --numeric-ids --delete \
+  scp ${PASSWORD_FILE} mathilde@lemiel.local:${DISTANT_PASSWORD_FILE}
+  ssh mathilde@lemiel.local rsync --archive --compress --one-file-system --human-readable --inplace --numeric-ids --delete \
       --compress-level=1 --delete-excluded --exclude='Téléchargements/*' --exclude='Sync/*' --exclude='Images/Camera_Sync/*' --verbose \
       --password-file=${DISTANT_PASSWORD_FILE} /home/mathilde/ rsync://root@superthenas.local:/Archive/Backup/Mathilde_Linux/
-  ssh mathilde@192.168.2.103 rsync --archive --compress --one-file-system --human-readable --inplace --numeric-ids --delete \
+  ssh mathilde@lemiel.local rsync --archive --compress --one-file-system --human-readable --inplace --numeric-ids --delete \
       --compress-level=1 --delete-excluded --exclude='Downloads/*' --exclude='Sync/*' --exclude='.Trash/*' --verbose \
       --password-file=${DISTANT_PASSWORD_FILE} /media/osx/Users/mathildemoreau/ rsync://root@superthenas.local:/Archive/Backup/Mathilde/
-  ssh mathilde@192.168.2.103 rm ${DISTANT_PASSWORD_FILE}
+  ssh mathilde@lemiel.local rm ${DISTANT_PASSWORD_FILE}
 
 
 # ╻┏ ╻╺┳┓┏━┓
