@@ -1,27 +1,16 @@
-Apps/nohup.out
-Camera/*
-Documents/VirtualBox VMs/*
-Downloads/*
-Dolphin/*
-Desktop/*
-GOG Games/*
-Photos/*
-These/*
-Music/*
-NextCloud/*
-tmp/*
-dd_backup/*
-VirtualBox VMs/*
-.cache/*
-.local/share/Daedalus/*
-.local/share/Steam/*
-.local/share/Trash/*
-.thunderbird/*
-.PlayOnLinux/*
-.steam/*
-snap/*
-Videos/*
-nohup.out
+.*
+
+Camera
+Desktop
+Downloads
+Music
+Nextcloud
+Photos
+Public
+snap
+Sync
+tmp
+*VirtualBox VMs
 
 *.o
 *.lo
