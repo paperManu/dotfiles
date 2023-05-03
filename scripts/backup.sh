@@ -45,14 +45,17 @@ elif [ ${target} = "mathilde" ] ; then
 elif [ ${target} = "mathildelinux" ] ; then
   # Backup Mathilde's computer
   DISTANT_PASSWORD_FILE="/tmp/rsync_password"
+  DISTANT_EXCLUDE_FILE="/tmp/backup_excludes.txt"
   scp ${PASSWORD_FILE} mathilde@lemiel.local:${DISTANT_PASSWORD_FILE}
-  ssh mathilde@lemiel.local rsync --archive --compress --one-file-system --human-readable --inplace --numeric-ids --delete \
-      --compress-level=1 --delete-excluded --exclude='Téléchargements/*' --exclude='Sync/*' --exclude='Images/Camera_Sync/*' --verbose \
+  scp backup_excludes.txt mathilde@lemiel.local:${DISTANT_EXCLUDE_FILE}
+  ssh mathilde@lemiel.local rsync -axhPzv --inplace --numeric-ids --delete --stats --compress-level=1 \
+      --delete-excluded --exclude-from ${DISTANT_EXCLUDE_FILE} \
       --password-file=${DISTANT_PASSWORD_FILE} /home/mathilde/ rsync://root@superthenas.local:/Archive/Backup/Mathilde_Linux/
-  ssh mathilde@lemiel.local rsync --archive --compress --one-file-system --human-readable --inplace --numeric-ids --delete \
-      --compress-level=1 --delete-excluded --exclude='Downloads/*' --exclude='Sync/*' --exclude='.Trash/*' --verbose \
+  ssh mathilde@lemiel.local rsync -axhPzv --inplace --numeric-ids --delete --stats --compress-level=1 \
+      --delete-excluded --exclude-from ${DISTANT_EXCLUDE_FILE} \
       --password-file=${DISTANT_PASSWORD_FILE} /media/osx/Users/mathildemoreau/ rsync://root@superthenas.local:/Archive/Backup/Mathilde/
   ssh mathilde@lemiel.local rm ${DISTANT_PASSWORD_FILE}
+  ssh mathilde@lemiel.local rm ${DISTANT_EXCLUDE_FILE}
 
 
 # ╻┏ ╻╺┳┓┏━┓
