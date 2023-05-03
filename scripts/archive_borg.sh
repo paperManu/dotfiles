@@ -10,7 +10,9 @@ if [ ! -d ${BORG_REPO} ]; then
 fi
 
 # See the section "Passphrase notes" for more infos.
-export BORG_PASSPHRASE='pass show manu/borg_backup'
+# export BORG_PASSPHRASE='pass show manu/borg_backup'
+read -s -p "Repository password: " REPO_PASSWORD
+export BORG_PASSPHRASE=${REPO_PASSWORD}
 
 # some helpers and error handling:
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
@@ -29,10 +31,10 @@ borg create                         \
     --show-rc                       \
     --compression zstd,9            \
     --exclude-caches                \
-    --exclude '/media/nas/Films'    \
+    --exclude '/media/data/Films'    \
                                     \
     ::'superthenas-{now}'           \
-    /media/nas
+    /media/data
 
 backup_exit=$?
 
