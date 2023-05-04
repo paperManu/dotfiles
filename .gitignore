@@ -1,4 +1,6 @@
 *.swp
+
 i3/xkblayout-state
+ranger/history
 vim/bundle/*
 weechat/urls.log
