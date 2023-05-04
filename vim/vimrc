@@ -12,6 +12,7 @@ set nowrap
 set hlsearch
 set guifont=Hack\ 9.5
 set wildmenu
+set wildmode=list:longest
 set undofile
 set undodir=/home/manu/.vimundo/
 set scrolloff=5
@@ -71,21 +72,24 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'djoshea/vim-autoread'
-Plugin 'jremmen/vim-ripgrep'
+Plugin 'jasonccox/vim-wayland-clipboard'
+
+" Zettel
+Plugin 'vimwiki/vimwiki'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'michal-h21/vim-zettel'
 
 " Code highlight / format
+Plugin 'sheerun/vim-polyglot'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'tikhomirov/vim-glsl'
 Plugin 'w0rp/ale'
 Plugin 'soramugi/auto-ctags.vim'
-Plugin 'cespare/vim-toml'
 Plugin 'Konfekt/FastFold'
 
 " Task management
-Plugin 'vimwiki/vimwiki'
 Plugin 'tools-life/taskwiki'
 Plugin 'powerman/vim-plugin-AnsiEsc'
-Plugin 'linuxcaffe/taskwarrior.vim'
 Plugin 'itchyny/calendar.vim'
 
 " Miscellaneous
@@ -214,6 +218,16 @@ let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
 let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
+
+"------------"
+" vim-zettel
+nnoremap <leader>zn :ZettelNew<space>
+nnoremap <leader>zo :ZettelOpen<space>
+nnoremap <leader>zs :ZettelSearch<space>
+
+"------------"
+" fzf
+nnoremap <leader>ag :Ag<cr>
 
 "------------"
 " taskwiki

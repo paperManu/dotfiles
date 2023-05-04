@@ -15,7 +15,8 @@ if [ "${ID}" == "ubuntu" ]; then
         openvpn network-manager-openvpn-gnome resolvconf \
         zsh lxappearance timewarrior \
         alacritty ranger ccache weechat-curses thunderbird syncthing \
-        git-lfs nextcloud-desktop taskwarrior tmux pass toilet
+        git-lfs nextcloud-desktop taskwarrior tmux pass toilet \
+        seahorse fzf ag
 fi
 
 # Fedora
@@ -23,10 +24,10 @@ if [ "${ID}" == "fedora" ]; then
     sudo dnf -y install git cppcheck arc-theme cifs-utils \
         clang-tools-extra ctags python3-pip \
         openvpn network-manager-openvpn-gnome resolvconf \
-        zsh lxappearance timew \
+        zsh lxappearance timew kitty \
         alacritty ranger ccache weechat thunderbird syncthing \
         git-lfs nextcloud-client task tmux xrandr xset pass \
-        deadbeef light waybar toilet
+        deadbeef light waybar toilet seahorse fzf ag
 fi
 
 sudo pip3 install flake8 autopep8 mypy pynvim tasklib
