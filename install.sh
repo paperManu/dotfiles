@@ -107,6 +107,7 @@ fi
 
 if [ ! -d ${HOME}/.vim ] ; then
     ln -s ${source_directory}/vim ${HOME}/.vim
+    mkdir -p ${HOME}/.vimundo
 else
     echo "${HOME}/.vim : this directory already exists"
 fi
