@@ -298,7 +298,7 @@ exec --no-startup-id "devmon --no-gui"
 # Network manager
 exec --no-startup-id "nm-applet"
 # Syncthing
-exec_always --no-startup-id "syncthing-gtk -m"
+exec_always --no-startup-id "syncthing"
 # Nextcloud
 exec_always --no-startup-id "nextcloud --background"
 # Compton
@@ -322,6 +322,3 @@ exec_always --no-startup-id "xinput disable `xinput list | egrep \"Atmel.*id=[0-
 exec_always --no-startup-id "xinput set-prop 'FocalTechPS/2 FocalTech Touchpad' 'libinput Tapping Enabled' 1"
 exec_always --no-startup-id "xinput set-prop 'FocalTechPS/2 FocalTech Touchpad' 'libinput Tapping Drag Enabled' 1"
 exec_always --no-startup-id "xinput set-prop 'FocalTechPS/2 FocalTech Touchpad' 'libinput Accel Speed' 0.7"
-# Change resolution
-exec_always --no-startup-id "xrandr --output eDP1 --mode 2048x1152"
-#exec "xrandr --output eDP1 --gamma 2:2:2"
