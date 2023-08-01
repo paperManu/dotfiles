@@ -21,7 +21,7 @@ converter.output_folder /tmp/
 converter.output_format 0
 converter.overwrite_action 0
 converter.write_to_source_folder 0
-deadbeef_version devel
+deadbeef_version 1.9.5
 filebrowser.autofilter 1
 filebrowser.bgcolor 
 filebrowser.bgcolor_selected 
@@ -51,11 +51,12 @@ filebrowser.showicons 1
 filebrowser.sidebar_width 220
 filebrowser.sort_treeview 1
 filebrowser.treelines 0
-filechooser.lastdir file:///home/manu/Music/Lossless/Godspeed%20You!%20Black%20Emperor
+filechooser.lastdir file:///home/manu/Music
 filechooser.playlist.lastdir file:///home/manu/Music
 global_preamp 0.0000000
 gtkui.action_separators 0
-gtkui.columns.playlist [{"title":"Album Art","id":"8","format":"","sort_format":"","size":"333","align":"0","color_override":"0","color":"#ffdadada"},{"title":"♫","id":"1","format":"","sort_format":"","size":"35","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"26","align":"1","color_override":"0","color":"#ff000000"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"26","align":"0","color_override":"0","color":"#ffd3dae3"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"261","align":"2","color_override":"0","color":"#ffdadada"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"403","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"47","align":"1","color_override":"0","color":"#ff000000"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"100","align":"0","color_override":"0","color":"#ffd3dae3"}]
+gtkui.columns.playlist [{"title":"Album Art","id":"8","format":"","sort_format":"","size":"276","align":"0","color_override":"0","color":"#ffdadada"},{"title":"♫","id":"1","format":"","sort_format":"","size":"35","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"37","align":"1","color_override":"0","color":"#ff000000"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"30","align":"0","color_override":"0","color":"#ffd3dae3"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"261","align":"2","color_override":"0","color":"#ffdadada"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"403","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"47","align":"1","color_override":"0","color":"#ff000000"},{"title":"Year","id":"-1","format":"%year%","sort_format":"","size":"100","align":"0","color_override":"0","color":"#ffd3dae3"}]
+gtkui.columns.search [{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"50","align":"1","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.custom_tray_icon deadbeef_tray_icon
 gtkui.delete_files_ask 1
 gtkui.disable_seekbar_overlay 0
@@ -63,12 +64,14 @@ gtkui.eq.visible 0
 gtkui.hide_tray_icon 0
 gtkui.last_playlist_save_name /home/manu/tmp/Flac/Lossless.dbpl
 gtkui.layout.0.6.2 vsplitter locked=2 ratio=0.987081 pos=932 size2=24 {hsplitter locked=0 ratio=0.534115 pos=934 size2=0 {coverart {} playlist hideheaders=0 width=1780 {} } seekbar {} } 
+gtkui.layout.1.9.0 {"type":"vsplitter","legacy_params":" locked=2 ratio=0.974038 pos=932 size2=24","children":[{"type":"hsplitter","legacy_params":" locked=0 ratio=0.534115 pos=934 size2=0","children":[{"type":"coverart","settings":{"mode":"selected"}},{"type":"tabbed_playlist","legacy_params":" hideheaders=0 width=937"}]},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.500000 pos=0 size2=0","children":[{"type":"seekbar"},{"type":"playtb"}]}]}
 gtkui.mmb_delete_playlist 1
 gtkui.name_playlist_from_folder 1
 gtkui.override_bar_colors 1
 gtkui.override_listview_colors 1
 gtkui.override_tabstrip_colors 1
 gtkui.playlist.group_by_tf %album%
+gtkui.search.group_by_tf 
 gtkui.statusbar.visible 1
 gtkui.sync 0
 gtkui.tabscroll 0
@@ -114,12 +117,13 @@ ignore_archives 1
 junk.enable_cp1251_detection 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
-logwindow.geometry.x 22
-logwindow.geometry.y 22
+logwindow.geometry.x 0
+logwindow.geometry.y 0
 mainwin.geometry.h 2134
+mainwin.geometry.maximized 1
 mainwin.geometry.w 3834
 mainwin.geometry.x 0
-mainwin.geometry.y 20
+mainwin.geometry.y 0
 mp3.id3v1_encoding iso8859-1
 mp3.id3v2_version 3
 mp3.write_id3v1 1
@@ -127,31 +131,31 @@ mp3.write_id3v2 1
 network.http_user_agent deadbeef
 network.proxy.port 8080
 network.proxy.type HTTP
-output_plugin PulseAudio output plugin
+output_plugin alsa
 playback.loop 1
 playback.order 0
 playback.volume -0.714285
+playback.volume.normalized 1.0000000
 playlist.column.00 "♫" "" 1 50 0
 playlist.column.01 "Artist / Album" "%a - %b" -1 287 0
 playlist.column.02 "Track No" "%n" -1 50 1
 playlist.column.03 "Title" "%t" -1 150 0
 playlist.column.04 "Duration" "%l" -1 50 0
-playlist.current 2
-playlist.cursor.0 1546
-playlist.cursor.1 0
-playlist.cursor.2 -1
-playlist.cursor.3 0
-playlist.scroll.0 -1546
-playlist.scroll.1 0
-playlist.scroll.2 0
-playlist.scroll.3 0
+playlist.current 0
+playlist.cursor.0 1674
+playlist.cursor.1 1674
+playlist.cursor.2 1674
+playlist.cursor.3 1674
+playlist.cursor.4 0
+playlist.scroll.0 52267
+playlist.scroll.1 52267
+playlist.scroll.2 52267
+playlist.scroll.3 52267
+playlist.scroll.4 0
 playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_album 1
 playlist.stop_after_album_reset 0
 playlist.tab.00000 Lossless
-playlist.tab.00001 New Playlist
-playlist.tab.00002 Music
-playlist.tab.00003 Music
 prefwin.geometry.h 578
 prefwin.geometry.w 859
 prefwin.geometry.x 805
@@ -160,14 +164,14 @@ replaygain_mode 2
 replaygain_preamp 0.0000000
 replaygain_scale 0
 resume.paused 1
-resume.playlist 2
-resume.position 1.6714286
-resume.track 1464
+resume.playlist 0
+resume.position 271.57925
+resume.track 1674
 resume_last_session 1
 searchwin.geometry.h 559
 searchwin.geometry.w 542
-searchwin.geometry.x 710
-searchwin.geometry.y 395
+searchwin.geometry.x 0
+searchwin.geometry.y 0
 streamer.8_to_16 1
 streamer.samplerate 44100
 streamer.samplerate_mult_44 44100
