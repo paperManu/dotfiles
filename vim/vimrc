@@ -224,6 +224,7 @@ au FileType vimwiki setlocal shiftwidth=2 tabstop=2
 nnoremap <leader>zn :ZettelNew<space>
 nnoremap <leader>zo :ZettelOpen<space>
 nnoremap <leader>zs :ZettelSearch<space>
+let g:zettel_format = "%y%m%d-%H%M-%title"
 
 "------------"
 " fzf
