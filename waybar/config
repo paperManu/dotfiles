@@ -19,9 +19,6 @@
 		"memory",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"memory#swap",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"cpu",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
@@ -38,6 +35,9 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"clock#2",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"idle_inhibitor",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"tray"
@@ -128,13 +128,8 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "Mem {avail}/{total}GB",
-		"tooltip-format": "{used}GB used"
-	},
-	"memory#swap": {
-		"interval": 5,
-		"format": "Swap {swapAvail}/{swapTotal}GB",
-		"tooltip-format": "{swapUsed}GB used"
+		"format": "Mem {avail}/{total}GB [{swapAvail}/{swapTotal}GB]",
+		"tooltip-format": "Mem: {used}GB used, [swap: {swapUsed}GB used]"
 	},
 	"cpu": {
 		"interval": 5,
@@ -142,7 +137,7 @@
 	},
 	"battery": {
 		"states": {
-			"good": 95,
+			"good": 90,
 			"warning": 30,
 			"critical": 15
 		},
@@ -162,6 +157,7 @@
 	},
     "network": {
         "format": "{ifname}",
+        "format-alt": "{bandwidthDownBytes}↓ {bandwidthUpBytes}↑",
         "format-wifi": "{ipaddr} ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-disconnected": "",
@@ -169,12 +165,16 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
+        "max-length": 50,
+        "interval": 1
     },
-    "network#bandwidth": {
-        "format": "{ifname}",
-        "format-wifi": "{bandwidthDownBytes}↓ {bandwidthUpBytes}↑",
-        "max-length": 50
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "timeout": 120
     },
 	"tray":
     {

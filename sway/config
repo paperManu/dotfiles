@@ -105,10 +105,10 @@ set $workspace2 2:Net
 set $workspace3 3:Chat
 set $workspace4 4:Media
 set $workspace5 5:Work
-set $workspace6 6:6
-set $workspace7 7:7
-set $workspace8 8:8
-set $workspace9 9:9
+set $workspace6 6:Sixth
+set $workspace7 7:Seventh
+set $workspace8 8:Eighth
+set $workspace9 9:Ninth
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -218,6 +218,7 @@ exec swayidle -w \
          timeout 600 'swaylock -f -c 000000' \
          timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
+bindsym $mod+Ctrl+l 'swaylock -f -c 000000'
 
 input "type:keyboard" {
     repeat_delay 250
