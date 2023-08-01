@@ -16,7 +16,7 @@ if [ "${ID}" == "ubuntu" ]; then
         zsh lxappearance timewarrior \
         alacritty ranger ccache weechat-curses thunderbird syncthing \
         git-lfs nextcloud-desktop taskwarrior tmux pass toilet \
-        seahorse fzf ag
+        seahorse fzf
 fi
 
 # Fedora
@@ -86,6 +86,14 @@ fi
 # ┏━┓╻ ╻┏━┓╻ ╻
 # ┗━┓┃╻┃┣━┫┗┳┛
 # ┗━┛┗┻┛╹ ╹ ╹ 
+if [ ! -d ${HOME}/.config/sway ] ; then
+    ln -s ${source_directory}/sway ${HOME}/.config/sway
+    cd sway
+    ./install.sh
+    cd ${source_directory}
+else
+    echo "${HOME}/.config/sway : this directory already exists"
+fi
 
 # ╻ ╻┏━┓╻ ╻┏┓ ┏━┓┏━┓
 # ┃╻┃┣━┫┗┳┛┣┻┓┣━┫┣┳┛
