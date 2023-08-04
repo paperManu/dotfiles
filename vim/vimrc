@@ -211,10 +211,15 @@ let g:netrw_list_hide = '.*.swp,.*.so'
 
 "-------------"
 " vimwiki
-let g:vimwiki_list = [{'path': '~/Sync/vimwiki',
+let g:vimwiki_list = [{
+                     \ 'path': '~/Sync/vimwiki',
                      \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'},
                      \ 'auto_tags': 1,
-                     \ 'auto_diary_index': 1}]
+                     \ 'auto_diary_index': 1
+                     \},
+                     \ {
+                     \ 'path': '~/Sync/zettelkasten',
+                     \}]
 let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
@@ -225,6 +230,7 @@ nnoremap <leader>zn :ZettelNew<space>
 nnoremap <leader>zo :ZettelOpen<space>
 nnoremap <leader>zs :ZettelSearch<space>
 let g:zettel_format = "%y%m%d-%H%M-%title"
+let g:zettel_options = [{}, {"front_matter" : [["tags",""]]}]
 
 "------------"
 " fzf
