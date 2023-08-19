@@ -230,7 +230,7 @@ nnoremap <leader>zn :ZettelNew<space>
 nnoremap <leader>zo :ZettelOpen<space>
 nnoremap <leader>zs :ZettelSearch<space>
 let g:zettel_format = "%y%m%d-%H%M-%title"
-let g:zettel_options = [{}, {"front_matter" : [["tags",""]]}]
+let g:zettel_options = [{}, {"front_matter" : [["tags",""], ["links", ""]]}]
 
 "------------"
 " fzf
