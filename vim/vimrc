@@ -81,7 +81,9 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'michal-h21/vim-zettel'
 
 " Code highlight / format
+let g:polyglot_disabled = ['autoindent', 'sensible']
 Plugin 'sheerun/vim-polyglot'
+
 Plugin 'rhysd/vim-clang-format'
 Plugin 'w0rp/ale'
 Plugin 'soramugi/auto-ctags.vim'
@@ -190,7 +192,7 @@ let g:ale_linters = {
 \   'rust': ['cargo', 'rls']
 \}
 let g:ale_python_flake8_options = '--ignore=E501,E225'
-let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'hicpp-*', 'cppcoreguidelines-*', 'bugprone-*']
+let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'bugprone-*', 'concurrency-*', 'modernize-*']
 let g:ale_cpp_clang_options = '-std=c++17'
 let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_cpp_cppcheck_options = '--enable=style'
