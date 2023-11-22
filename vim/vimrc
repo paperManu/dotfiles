@@ -81,8 +81,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'michal-h21/vim-zettel'
 
 " Code highlight / format
-let g:polyglot_disabled = ['autoindent', 'sensible']
-Plugin 'sheerun/vim-polyglot'
+" let g:polyglot_disabled = ['autoindent', 'sensible']
+" Plugin 'sheerun/vim-polyglot'
 
 Plugin 'rhysd/vim-clang-format'
 Plugin 'w0rp/ale'
