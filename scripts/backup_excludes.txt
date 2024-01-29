@@ -1,4 +1,23 @@
-.*
+.bundle
+.cache
+.ccache
+.cargo
+.daedalus
+.npm
+.steam
+
+.timewarrior
+.tmux
+.vim
+.weechat
+.zprezto
+
+.bashrc
+.profile
+.taskrc
+.tmux.conf
+.vimrc
+.z*
 
 Camera
 Downloads
@@ -10,6 +29,9 @@ snap
 Sync
 tmp
 *VirtualBox VMs
+
+*Daedalus
+*UnrealEngine
 
 *.o
 *.lo

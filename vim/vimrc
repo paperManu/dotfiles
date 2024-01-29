@@ -118,8 +118,45 @@ colorscheme solarized
 "-------------"
 " Lightline
 let g:lightline = {
-\ 'colorscheme': 'solarized',
-\ }
+    \ 'colorscheme': 'solarized',
+    \ }
+let g:lightline.component = {
+    \ 'mode': '%{lightline#mode()}',
+    \ 'absolutepath': '%F',
+    \ 'relativepath': '%f',
+    \ 'filename': '%t',
+    \ 'modified': '%M',
+    \ 'bufnum': '%n',
+    \ 'paste': '%{&paste?"PASTE":""}',
+    \ 'readonly': '%R',
+    \ 'charvalue': '%b',
+    \ 'charvaluehex': '%B',
+    \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}',
+    \ 'fileformat': '%{&ff}',
+    \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
+    \ 'percent': '%3p%%',
+    \ 'percentwin': '%P',
+    \ 'spell': '%{&spell?&spelllang:""}',
+    \ 'lineinfo': '%3l:%-2c',
+    \ 'charcount': "%{line2byte(line('$')+1)-1}",
+    \ 'wordcount': "%{wordcount().words}",
+    \ 'line': '%l',
+    \ 'column': '%c',
+    \ 'close': '%999X X ',
+    \ 'winnr': '%{winnr()}' }
+let g:lightline.active = {
+    \ 'left': [ [ 'mode', 'paste' ],
+    \           [ 'readonly', 'filename', 'modified' ] ],
+    \ 'right': [ [ 'lineinfo', 'charcount', 'wordcount' ],
+    \            [ 'percent' ],
+    \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+let g:lightline.inactive = {
+    \ 'left': [ [ 'filename' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ] ] }
+let g:lightline.tabline = {
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [ [ 'close' ] ] }
 
 "-------------"
 " Latex related configuration
@@ -192,7 +229,7 @@ let g:ale_linters = {
 \   'rust': ['cargo', 'rls']
 \}
 let g:ale_python_flake8_options = '--ignore=E501,E225'
-let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'bugprone-*', 'concurrency-*', 'modernize-*']
+let g:ale_cpp_clangtidy_checks = ['performance-*', 'portability-*', 'bugprone-*', 'concurrency-*']
 let g:ale_cpp_clang_options = '-std=c++17'
 let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_cpp_cppcheck_options = '--enable=style'
@@ -237,6 +274,7 @@ let g:zettel_options = [{}, {"front_matter" : [["tags",""], ["links", ""]]}]
 "------------"
 " fzf
 nnoremap <leader>ag :Ag<cr>
+nnoremap <leader>rg :Rg<cr>
 
 "------------"
 " taskwiki
