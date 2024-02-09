@@ -42,6 +42,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec "rofi -font 'Hack 9' -combi-modi run,drun -show combi -modi combi -disable-history -separator-style solid -opacity 95"
 bindsym $mod+t exec "rofi -modi tasks:~/.cargo/bin/rofi-taskwarrior -show tasks"
+bindsym $mod+p exec "rofi-pass"
 
 # change focus
 bindsym $mod+h focus left
@@ -88,7 +89,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle, resize set 1024 1024
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -140,7 +141,7 @@ bindsym $mod+Shift+Escape move container to workspace $workspace0
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show, resize set 1024 1024
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -214,10 +215,7 @@ xwayland enable
 gaps inner 8
 
 # Screen locking and lock before sleep
-exec swayidle -w \
-         timeout 600 'swaylock -f -c 000000' \
-         timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 bindsym $mod+Ctrl+l 'swaylock -f -c 000000'
 bindsym $mod+Ctrl+s 'systemctl suspend'
 
@@ -244,10 +242,8 @@ output eDP-1 {
 }
 
 output DP-3 {
-    mode --custom 3840x2160
     bg $wallpaper stretch
 }
-
 
 # For keyboard without media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
@@ -258,9 +254,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 && pkill -RTMIN+5 i
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 && pkill -RTMIN+5 i3blocks
 
 # Screenshot
-bindsym $mod+p exec grimshot save active
-bindsym $mod+Shift+p exec grimshot save area
-bindsym $mod+Alt+p exec grimshot save output
+bindsym $mod+Shift+p exec grimshot save active
+bindsym $mod+Alt+p exec grimshot save area
 
 exec_always {
     gsettings set $gnome-schema gtk-theme "Arc-Dark"

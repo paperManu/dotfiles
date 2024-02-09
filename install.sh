@@ -16,18 +16,18 @@ if [ "${ID}" == "ubuntu" ]; then
         zsh lxappearance timewarrior \
         alacritty ranger ccache weechat-curses thunderbird syncthing \
         git-lfs nextcloud-desktop taskwarrior tmux pass toilet \
-        seahorse fzf
+        seahorse fzf wtype pwgen
 fi
 
 # Fedora
 if [ "${ID}" == "fedora" ]; then
     sudo dnf -y install git cppcheck arc-theme cifs-utils \
-        clang-tools-extra ctags python3-pip \
-        openvpn network-manager-openvpn-gnome resolvconf \
-        zsh lxappearance timew kitty \
-        alacritty ranger ccache weechat thunderbird syncthing \
-        git-lfs nextcloud-client task tmux xrandr xset pass \
-        deadbeef light waybar toilet seahorse fzf ag
+        clang-tools-extra ctags python3-pip openvpn \
+        network-manager-openvpn-gnome resolvconf zsh \
+        lxappearance timew kitty alacritty ranger ccache \
+        weechat thunderbird syncthing git-lfs nextcloud-client \
+        task tmux xrandr xset pass deadbeef light waybar \
+        toilet seahorse fzf ag wtype pwgen
 fi
 
 sudo pip3 install flake8 autopep8 mypy pynvim tasklib
@@ -42,8 +42,6 @@ if [ ! -x "$(command -v rustc)" ]; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     rustup update
 fi
-
-cargo install ripgrep rofi-taskwarrior
 
 # ┏┓ ┏━┓┏━┓╻ ╻
 # ┣┻┓┣━┫┗━┓┣━┫
@@ -81,6 +79,17 @@ if [ ! -d ${HOME}/.config/i3 ] ; then
     cd ${source_directory}
 else
     echo "${HOME}/.config/i3 : this directory already exists"
+fi
+
+# ┏━┓┏━┓┏━╸╻   ┏━┓╺┳╸╻ ╻┏━╸┏━╸
+# ┣┳┛┃ ┃┣╸ ┃   ┗━┓ ┃ ┃ ┃┣╸ ┣╸ 
+# ╹┗╸┗━┛╹  ╹   ┗━┛ ╹ ┗━┛╹  ╹  
+cargo install ripgrep rofi-taskwarrior
+sudo cp ../rofi-pass/rofi-pass /usr/local/bin/rofi-pass
+if [ ! -d ${HOME}/.config/rofi-pass ] ; then
+    ln -s ${source_directory}/rofi-pass ${HOME}/.config/rofi-pass
+else
+    echo "${HOME}/.config/rofi-pass : this directory already exists"
 fi
 
 # ┏━┓╻ ╻┏━┓╻ ╻
