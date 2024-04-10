@@ -160,6 +160,12 @@ workspace "5:Work"
 #
 # Some windows are floating by default
 for_window [class="Splash.*"] floating enable
+# TouchDesigner windows
+for_window [title="Component Editor"] floating enable
+for_window [title="Confirm.."] floating enable
+for_window [title="Change Parameter Constant"] floating enable
+for_window [title="Display Options.*"] floating enable
+for_window [title="Line.*Color.*"] floating enable
 
 # We don't want no sharing indicator from Firefox
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] {
