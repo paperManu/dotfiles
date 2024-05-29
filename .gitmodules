@@ -7,3 +7,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = http://github.com/tmux-plugins/tpm.git
+[submodule "ranger/plugins/ranger-archives"]
+	path = ranger/plugins/ranger-archives
+	url = https://github.com/maximtrp/ranger-archives.git
