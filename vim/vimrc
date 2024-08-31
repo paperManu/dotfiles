@@ -58,6 +58,11 @@ Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
 
+" Coding
+Plugin 'puremourning/vimspector'
+Plugin 'fidian/hexmode'
+Plugin 'ziglang/zig.vim'
+
 " Theme
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
@@ -69,10 +74,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
 Plugin 'djoshea/vim-autoread'
 Plugin 'jasonccox/vim-wayland-clipboard'
+Plugin 'normen/DrawIt'
+
+" Writing
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 " Zettel
 Plugin 'vimwiki/vimwiki'
@@ -219,6 +227,11 @@ autocmd FileType vimwiki call deoplete#custom#buffer_option('auto_complete', v:f
 autocmd FileType latex call deoplete#custom#buffer_option('auto_complete', v:false)
 
 "-------------"
+" Vimspector
+nmap <Leader>vi <Plug>VimspectorBalloonEval
+xmap <Leader>vi <Plug>VimspectorBalloonEval
+
+"-------------"
 " ale
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
@@ -264,6 +277,7 @@ let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
 autocmd BufNewFile ~/*/diary/[0-9]*.wiki :silent %!echo "= `date +'\%Y-\%m-\%d'` =\n"
 noremap <leader>w<leader>T :VimwikiGenerateTagLinks<cr>
+noremap <leader>w<leader>F :set foldmethod=expr<cr>
 
 "------------"
 " vim-zettel
@@ -303,9 +317,8 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_paragraph_span = 2
 
 "-------------"
-" Limelight
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_paragraph_span = 2
+" Goyo
+nmap <leader>g :Goyo<cr>
 
 "-------------"
 " Some project-specific configuration
