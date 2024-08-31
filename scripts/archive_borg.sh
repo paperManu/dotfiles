@@ -31,12 +31,24 @@ borg create                         \
     --show-rc                       \
     --compression zstd,9            \
     --exclude-caches                \
-    --exclude '/media/data/Films'    \
+    --exclude '/media/nas/Films'    \
                                     \
     ::'superthenas-{now}'           \
-    /media/data
+    /media/nas
 
-backup_exit=$?
+borg create                         \
+    --verbose                       \
+    --filter ADEMU                  \
+    --list                          \
+    --stats                         \
+    --show-rc                       \
+    --compression zstd,9            \
+    --exclude-caches                \
+                                    \
+    ::'nas-lab148-{now}'            \
+    /media/nas-lab148
+
+backup_exit=$(( $? > backup_exit ? $? : backup_exit ))
 
 info "Pruning repository"
 
@@ -47,10 +59,9 @@ info "Pruning repository"
 
 borg prune                          \
     --list                          \
-    --glob-archives 'superthenas-*' \
     --show-rc                       \
-    --keep-daily    7               \
-    --keep-weekly   4               \
+    --keep-daily    1               \
+    --keep-weekly   1               \
     --keep-monthly  6
 
 prune_exit=$?

@@ -28,7 +28,7 @@ Public
 snap
 Sync
 tmp
-*VirtualBox VMs
+VMs
 
 *Daedalus
 *UnrealEngine
