@@ -24,10 +24,9 @@ font pango:Hack,FontAwesome 8.5
 floating_modifier $mod
 
 # start various stuff
-bindsym $mod+Return exec "kitty"
-# bindsym $mod+Shift+Return exec "if hash nemo; then nemo; else nautilus; fi"
+bindsym $mod+Return exec "alacritty"
 bindsym $mod+Shift+Return exec "kitty ranger"
-bindsym $mod+Ctrl+Return exec "kitty vim"
+bindsym $mod+Ctrl+Return exec "alacritty -t vim -e vim"
 bindsym $mod+Ctrl+p exec "kitty ipython3"
 bindsym $mod+Ctrl+t exec "alacritty -t taskwarrior-tui -e ${HOME}/.cargo/bin/taskwarrior-tui"
 
