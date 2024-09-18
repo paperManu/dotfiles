@@ -277,7 +277,7 @@ let g:vimwiki_global_ext = 0
 au FileType vimwiki setlocal shiftwidth=2 tabstop=2
 autocmd BufNewFile ~/*/diary/[0-9]*.wiki :silent %!echo "= `date +'\%Y-\%m-\%d'` =\n"
 noremap <leader>w<leader>T :VimwikiGenerateTagLinks<cr>
-noremap <leader>w<leader>F :set foldmethod=expr<cr>
+noremap <leader>w<leader>F :set foldmethod=syntax<cr>
 
 "------------"
 " vim-zettel
