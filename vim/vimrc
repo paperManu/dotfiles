@@ -318,7 +318,7 @@ let g:limelight_paragraph_span = 2
 
 "-------------"
 " Goyo
-nmap <leader>g :Goyo<cr>
+nmap <leader>g :Goyo<cr>:set wrap<cr>
 
 "-------------"
 " Some project-specific configuration
