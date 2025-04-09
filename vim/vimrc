@@ -199,7 +199,7 @@ let g:alternateSearchPath = 'reg:#\<src\>$#include#,reg:#\<include\>$#src#'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_lazy_update = 100
-nnoremap <leader><C-P> :CtrlPTag<cr>
+let g:ctrlp_map = '<c-i>'
 
 "-------------"
 " vim-clang-format
@@ -301,6 +301,7 @@ augroup END
 " fzf
 nnoremap <leader>ag :Ag<cr>
 nnoremap <leader>rg :Rg<cr>
+map <C-p> :GFiles<cr>
 
 "------------"
 " taskwiki
